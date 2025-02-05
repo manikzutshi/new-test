@@ -106,30 +106,33 @@
             </button>
         </div>
         
-        <script>
-            const video = document.getElementById("videoPlayer");
-            const playButton = document.getElementById("playButton");
-            const playIcon = document.getElementById("playIcon");
-            const pauseIcon = document.getElementById("pauseIcon");
-        
-            playButton.addEventListener("click", () => {
-                if (video.paused) {
-                    video.play();
-                } else {
-                    video.pause();
-                }
-            });
-        
-            video.addEventListener("play", () => {
-                playIcon.classList.add("hidden");
-                pauseIcon.classList.remove("hidden");
-            });
-        
-            video.addEventListener("pause", () => {
-                playIcon.classList.remove("hidden");
-                pauseIcon.classList.add("hidden");
-            });
-        </script>
+       <script>
+    const video = document.getElementById("videoPlayer");
+    const button = document.getElementById("playPauseButton");
+    const playIcon = document.getElementById("playIcon");
+
+    button.addEventListener("click", () => {
+        if (video.paused) {
+            video.play();
+            button.style.opacity = "0";  // Hide button when playing
+        } else {
+            video.pause();
+            button.style.opacity = "1";  // Show button when paused
+        }
+    });
+
+    video.addEventListener("play", () => {
+        button.style.opacity = "0";  // Auto-hide when video starts
+    });
+
+    video.addEventListener("pause", () => {
+        button.style.opacity = "1";  // Show when paused
+    });
+
+    video.addEventListener("ended", () => {
+        button.style.opacity = "1";  // Show when video ends
+    });
+</script>
         
           <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
             <div class="flex flex-col gap-3 pb-3">
