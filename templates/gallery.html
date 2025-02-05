@@ -91,22 +91,17 @@
               <div class="flex items-center justify-center"><p class="text-white text-sm font-normal leading-normal">Seconds</p></div>
             </div>
           </div>
-          <div class="relative flex items-center justify-center bg-black aspect-video rounded-xl overflow-hidden">
-            <video id="videoPlayer" class="w-full h-full object-cover" poster="/static/17.jpg">
-                <source src="/static/17.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <button id="playButton" class="absolute flex items-center justify-center rounded-full size-16 bg-black/40 text-white">
-                <svg id="playIcon" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"></path>
-                </svg>
-                <svg id="pauseIcon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M96,224a16,16,0,0,1-16-16V48a16,16,0,0,1,32,0V208A16,16,0,0,1,96,224ZM176,48V208a16,16,0,0,1-32,0V48a16,16,0,0,1,32,0Z"></path>
-                </svg>
-            </button>
-        </div>
-        
-       <script>
+         <div class="relative flex items-center justify-center bg-black bg-cover bg-center aspect-video gradient-overlay relative-position">
+    <video id="videoPlayer" class="w-full h-full" src="/static/17.mp4" poster="/static/17-thumbnail.jpg"></video>
+    
+    <button id="playPauseButton" class="absolute flex shrink-0 items-center justify-center rounded-full size-16 bg-black/40 text-white transition-opacity duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+            <path id="playIcon" d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"></path>
+        </svg>
+    </button>
+</div>
+
+<script>
     const video = document.getElementById("videoPlayer");
     const button = document.getElementById("playPauseButton");
     const playIcon = document.getElementById("playIcon");
@@ -133,6 +128,7 @@
         button.style.opacity = "1";  // Show when video ends
     });
 </script>
+
         
           <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
             <div class="flex flex-col gap-3 pb-3">
