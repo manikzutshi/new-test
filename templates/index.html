@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Protected</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Glitter Effect */
+        @keyframes glitter {
+            0% { background-position: 0 0; }
+            100% { background-position: 100% 100%; }
+        }
+
+        .glitter-bg {
+            background: linear-gradient(45deg, rgba(255, 182, 193, 0.3) 25%, rgba(255, 182, 193, 0.5) 50%, rgba(255, 182, 193, 0.3) 75%);
+            background-size: 400% 400%;
+            animation: glitter 5s infinite linear;
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen bg-pink-200 text-center glitter-bg">
+
+    <h1 class="text-4xl md:text-6xl font-bold text-red-600 opacity-0" id="title">Enter Password to Proceed</h1>
+
+    <form method="POST" class="mt-4 flex flex-col items-center">
+        <input name="password" type="password" class="px-6 py-3 text-lg rounded-full shadow-lg bg-white text-gray-800 placeholder-gray-500" placeholder="Enter password" required />
+        <button type="submit" class="mt-4 px-6 py-3 bg-red-500 text-white text-lg font-semibold rounded-full shadow-lg hover:bg-red-600 transition">Submit</button>
+    </form>
+
+    {% if error %}
+    <p class="text-red-600 mt-2">{{ error }}</p>
+    {% endif %}
+
+    <script>
+        const title = document.getElementById("title");
+        gsap.to(title, { opacity: 1, y: -10, duration: 1.5, ease: "power2.out" });
+    </script>
+
+</body>
+</html>

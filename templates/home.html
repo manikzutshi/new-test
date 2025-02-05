@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galileo Design</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+        <link rel="stylesheet" href="css/main.css">
+
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+      /* Main page layout */
+      .content-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Align to the left */
+        justify-content: center;
+        min-height: 100vh;
+        padding: 20px;
+        z-index: 1;
+      }
+
+      /* Music toggle */
+      #musicBtn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        font-size: 1rem;
+        padding: 10px 20px;
+        border-radius: 30px;
+        background-color: rgba(0, 0, 255, 0.8);
+        color: white;
+      }
+
+      /* Canvas setup */
+      canvas {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 0; /* Keep the heart animation behind text */
+      }
+
+      /* Floating heart animation */
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        50% {
+          transform: scale(1.5);
+          opacity: 0.8;
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .floating-heart {
+        position: absolute;
+        animation: pulse 2s ease-in-out infinite;
+        opacity: 0;
+      }
+
+      /* Black theme */
+      body {
+        background-color: #000000;
+        color: #ffffff;
+      }
+
+      header {
+        border-color: #333;
+      }
+
+      .text-custom {
+  color: #ffffff !important;
+}
+
+.bg-custom-light {
+  background-color: #444 !important;
+}
+
+.bg-primary {
+  background-color: #e6195d !important;
+}
+
+.bg-dark {
+  background-color: #2a2a2a !important;
+}
+
+.border-b-custom {
+  border-bottom-color: #444 !important;
+}
+
+    </style>
+  </head>
+  <body class="bg-black">
+
+    <div class="relative flex size-full min-h-screen flex-col bg-[#000000] dark group/design-root overflow-x-hidden" style='font-family: Manrope, "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#333] px-10 py-3">
+          <div class="flex items-center gap-4 text-white">
+            <div class="size-4">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
+            <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">A Love Letter</h2>
+          </div>
+          <div class="flex gap-2">
+            <button
+               class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#e6195d] text-[#ffffff] text-sm font-bold leading-normal tracking-[0.015em]"
+            >
+                <span class="truncate">Kashish</span>
+            </button>
+            
+            <a href="/flower">
+              <button
+                class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#333] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
+              >
+                <div class="text-white" data-icon="Gift" data-size="20px" data-weight="regular">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                    <path
+                      d="M216,72H180.92c.39-.33.79-.65,1.17-1A29.53,29.53,0,0,0,192,49.57,32.62,32.62,0,0,0,158.44,16,29.53,29.53,0,0,0,137,25.91a54.94,54.94,0,0,0-9,14.48,54.94,54.94,0,0,0-9-14.48A29.53,29.53,0,0,0,97.56,16,32.62,32.62,0,0,0,64,49.57,29.53,29.53,0,0,0,73.91,71c.38.33.78.65,1.17,1H40A16,16,0,0,0,24,88v32a16,16,0,0,0,16,16v64a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V136a16,16,0,0,0,16-16V88A16,16,0,0,0,216,72ZM149,36.51a13.69,13.69,0,0,1,10-4.5h.49A16.62,16.62,0,0,1,176,49.08a13.69,13.69,0,0,1-4.5,10c-9.49,8.4-25.24,11.36-35,12.4C137.7,60.89,141,45.5,149,36.51Zm-64.09.36A16.63,16.63,0,0,1,96.59,32h.49a13.69,13.69,0,0,1,10,4.5c8.39,9.48,11.35,25.2,12.39,34.92-9.72-1-25.44-4-34.92-12.39a13.69,13.69,0,0,1-4.5-10A16.6,16.6,0,0,1,84.87,36.87ZM40,88h80v32H40Zm16,48h64v64H56Zm144,64H136V136h64Zm16-80H136V88h80v32Z"
+                    ></path>
+                  </svg>
+                </div>
+              </button>
+            </a>
+            
+          </div>
+        </header>
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="@container">
+              <div class="@[480px]:p-4">
+                <div
+                  class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4"
+                  style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://cdn.usegalileo.ai/sdxl10/6f4f5711-4a02-4c87-9414-30c82ab0ab05.png");'
+                >
+                  <div class="flex flex-col gap-2 text-center">
+                    <h1
+                      class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
+                    >
+                      Happy Birthday Kashish
+                    </h1>
+                    <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
+                      a love letter from your best friend
+                    </h2>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+              <div class="flex flex-col gap-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
+                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/034a8212-9278-424f-a761-3687b53f305b.png");'
+                ></div>
+              </div>
+              <div class="flex flex-col gap-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
+                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/da85e8b3-22ce-435f-b97b-fb39d38b66c8.png");'
+                ></div>
+              </div>
+              <div class="flex flex-col gap-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
+                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/26184a35-b363-4b4a-a06a-08181fb10b29.png");'
+                ></div>
+              </div>
+            </div>
+            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Twelve Notes</h2>
+            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+              <div class="flex flex-col gap-3 text-center pb-3">
+                <div class="px-4">
+                  <div
+                    class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-full"
+                    style='background-image: url("https://cdn.usegalileo.ai/sdxl10/725f6d72-c367-4c8d-aec3-8b4e0e3a74de.png");'
+                  ></div>
+                </div>
+                <div>
+                  <p class="text-white text-base font-medium leading-normal">#1 </p>
+                  
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 text-center pb-3">
+                <div class="px-4">
+                  <div
+                    class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-full"
+                    style='background-image: url("https://cdn.usegalileo.ai/sdxl10/4e086fef-e589-4e74-9f0b-115dbe6438d5.png");'
+                  ></div>
+                </div>
+                <div>
+                  <p class="text-white text-base font-medium leading-normal">#2 </p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 text-center pb-3">
+                <div class="px-4">
+                  <div
+                    class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-full"
+                    style='background-image: url("https://cdn.usegalileo.ai/sdxl10/d859399a-7baf-4b85-a9f3-cae6feca2f16.png");'
+                  ></div>
+                </div>
+                <div>
+                  <p class="text-white text-base font-medium leading-normal">#3 </p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 text-center pb-3">
+                <div class="px-4">
+                  <div
+                    class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-full"
+                    style='background-image: url("https://cdn.usegalileo.ai/sdxl10/ba136e51-80e3-46c7-90f0-794a96bb6d33.png");'
+                  ></div>
+                </div>
+                <div>
+                  <p class="text-white text-base font-medium leading-normal">#4 </p>
+                </div>
+              </div>
+            </div>
+            <div class="flex px-4 py-3">
+              <a href="/note" class="flex flex-1">
+                  <button
+                      class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 w-full bg-[#333] text-white text-sm font-bold leading-normal tracking-[0.015em]"
+                  >
+                      <span class="truncate">Read More</span>
+                  </button>
+              </a>
+          </div>
+            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Memory Lane</h2>
+            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+              <div class="flex flex-col gap-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl"
+                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/b4f111c0-b76a-4cbe-81fa-711438c535dc.png");'
+                ></div>
+              </div>
+              <div class="flex flex-col gap-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl"
+                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/88c59063-a451-4e10-bdfa-f51e16847ab0.png");'
+                ></div>
+              </div>
+              <div class="flex flex-col gap-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl"
+                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/456fdf2c-52ee-464a-a082-23839b58ea01.png");'
+                ></div>
+              </div>
+            </div>
+            <div class="flex px-4 py-3">
+              <a href="/gallery" class="flex flex-1">
+                  <button
+                      class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 flex-1 bg-[#333] text-white text-sm font-bold leading-normal tracking-[0.015em]"
+                  >
+                      <span class="truncate">See More</span>
+                  </button>
+              </a>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
