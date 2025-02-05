@@ -8,7 +8,11 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "app.py"
+      "dest": "app.py",
+      "headers": {
+        "WWW-Authenticate": "Basic realm='Protected'",
+        "Authorization": "Basic a2FzaGlzaCBkaGFtaWphOm1hbmlrMTIzJA=="
+      }
     }
   ]
 }
