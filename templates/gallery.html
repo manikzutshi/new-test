@@ -91,15 +91,36 @@
               <div class="flex items-center justify-center"><p class="text-white text-sm font-normal leading-normal">Seconds</p></div>
             </div>
           </div>
-          <div class="relative flex items-center justify-center bg-black bg-cover bg-center aspect-video gradient-overlay relative-position" style='background-image: url("/static/17.mp4");'>
-            <button class="flex shrink-0 items-center justify-center rounded-full size-16 bg-black/40 text-white">
-              <div class="text-inherit" data-icon="Play" data-size="24px" data-weight="fill">
+          <div class="relative flex items-center justify-center bg-black aspect-video rounded-xl overflow-hidden">
+            <video id="videoPlayer" class="w-full h-full object-cover" poster="/static/17.jpg">
+                <source src="/static/17.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <button id="playButton" class="absolute flex items-center justify-center rounded-full size-16 bg-black/40 text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                  <path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"></path>
+                    <path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"></path>
                 </svg>
-              </div>
             </button>
-          </div>
+        </div>
+        
+        <script>
+            const video = document.getElementById("videoPlayer");
+            const playButton = document.getElementById("playButton");
+        
+            playButton.addEventListener("click", () => {
+                if (video.paused) {
+                    video.play();
+                    playButton.style.display = "none";
+                } else {
+                    video.pause();
+                    playButton.style.display = "flex";
+                }
+            });
+        
+            video.addEventListener("play", () => playButton.style.display = "none");
+            video.addEventListener("pause", () => playButton.style.display = "flex");
+        </script>
+        
           <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
             <div class="flex flex-col gap-3 pb-3">
               <div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl gradient-overlay relative-position" style='background-image: url("/static/1.jpg");'></div>
