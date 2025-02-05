@@ -1,42 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password Protected</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* Glitter Effect */
-        @keyframes glitter {
-            0% { background-position: 0 0; }
-            100% { background-position: 100% 100%; }
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+            background: linear-gradient(45deg, #222222, #000000, #1d1d1d, #000000);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
 
-        .glitter-bg {
-            background: linear-gradient(45deg, rgba(255, 182, 193, 0.3) 25%, rgba(255, 182, 193, 0.5) 50%, rgba(255, 182, 193, 0.3) 75%);
-            background-size: 400% 400%;
-            animation: glitter 5s infinite linear;
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .input-field {
+            padding: 16px 24px;
+            font-size: 18px;
+            border-radius: 9999px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #2e2e2e;
+            color: #e0e0e0;
+            border: none;
+            margin-top: 16px;
+        }
+
+        .input-field::placeholder {
+            color: #a0a0a0;
+            opacity: 1; /* Ensure placeholder text is visible */
+        }
+
+        .submit-button {
+            margin-top: 16px;
+            padding: 16px 24px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 9999px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: #2e2e2e;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-button:hover {
+            background-color: #3a3a3a;
+        }
+
+        .error-message {
+            color: #ff4d4d;
+            margin-top: 8px;
+        }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+            background-color: rgba(46, 46, 46, 0.9); /* Slightly transparent background */
+            border-radius: 15px;
         }
     </style>
+    <title>Password Protected Page</title>
 </head>
-<body class="flex flex-col items-center justify-center min-h-screen bg-pink-200 text-center glitter-bg">
 
-    <h1 class="text-4xl md:text-6xl font-bold text-red-600 opacity-0" id="title">Enter Password to Proceed</h1>
+<body class="glitter-bg">
 
-    <form method="POST" class="mt-4 flex flex-col items-center">
-        <input name="password" type="password" class="px-6 py-3 text-lg rounded-full shadow-lg bg-white text-gray-800 placeholder-gray-500" placeholder="Enter password" required />
-        <button type="submit" class="mt-4 px-6 py-3 bg-red-500 text-white text-lg font-semibold rounded-full shadow-lg hover:bg-red-600 transition">Submit</button>
-    </form>
-
-    {% if error %}
-    <p class="text-red-600 mt-2">{{ error }}</p>
-    {% endif %}
+        <h1 class="text-4xl md:text-6xl font-bold text-gray-100 opacity-0" id="title">Enter Password to Proceed</h1>
+        <form method="POST" class="mt-4 flex flex-col items-center">
+            <input name="password" type="password" class="input-field" placeholder="Enter password" required />
+            <button type="submit" class="submit-button">Submit</button>
+        </form>
+        {% if error %}
+        <p class="error-message">{{ error }}</p>
+        {% endif %}
+    </div>
 
     <script>
         const title = document.getElementById("title");
         gsap.to(title, { opacity: 1, y: -10, duration: 1.5, ease: "power2.out" });
     </script>
-
 </body>
+
 </html>
