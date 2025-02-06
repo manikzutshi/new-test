@@ -14,12 +14,11 @@
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   </head>
   <body>
-    <div class="relative flex size-full min-h-screen flex-col bg-[#112022] dark group/design-root overflow-x-hidden" style='font-family: Manrope, "Noto Sans", sans-serif;'>
+    <div class="relative flex size-full min-h-screen flex-col bg-black dark group/design-root overflow-x-hidden" style='font-family: Manrope, "Noto Sans", sans-serif;'>
       <div class="layout-container flex h-full grow flex-col">
         <div class="px-40 flex flex-1 justify-center py-5">
           <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-            <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#244447] px-10 py-3">
-              <div class="flex items-center gap-4 text-white">
+            <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-white px-10 py-3">              <div class="flex items-center gap-4 text-white">
                 <div class="size-4">
                   <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clip-path="url(#clip0_6_543)">
@@ -39,117 +38,128 @@
                     </defs>
                   </svg>
                 </div>
-                <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Memory Lane</h2>
+                <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Twelve Notes</h2>
               </div>
               <div class="flex flex-1 justify-end gap-8">
                 <div class="flex items-center gap-9">
                   <a class="text-white text-sm font-medium leading-normal" href="#">Home</a>
-                  <a class="text-white text-sm font-medium leading-normal" href="#">Memories</a>
-                  <a class="text-white text-sm font-medium leading-normal" href="#">Gifts</a>
-                  <a class="text-white text-sm font-medium leading-normal" href="#">Help Center</a>
+                  <div class="text-white" data-icon="Gift" data-size="20px" data-weight="regular">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                      <path
+                        d="M216,72H180.92c.39-.33.79-.65,1.17-1A29.53,29.53,0,0,0,192,49.57,32.62,32.62,0,0,0,158.44,16,29.53,29.53,0,0,0,137,25.91a54.94,54.94,0,0,0-9,14.48,54.94,54.94,0,0,0-9-14.48A29.53,29.53,0,0,0,97.56,16,32.62,32.62,0,0,0,64,49.57,29.53,29.53,0,0,0,73.91,71c.38.33.78.65,1.17,1H40A16,16,0,0,0,24,88v32a16,16,0,0,0,16,16v64a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V136a16,16,0,0,0,16-16V88A16,16,0,0,0,216,72ZM149,36.51a13.69,13.69,0,0,1,10-4.5h.49A16.62,16.62,0,0,1,176,49.08a13.69,13.69,0,0,1-4.5,10c-9.49,8.4-25.24,11.36-35,12.4C137.7,60.89,141,45.5,149,36.51Zm-64.09.36A16.63,16.63,0,0,1,96.59,32h.49a13.69,13.69,0,0,1,10,4.5c8.39,9.48,11.35,25.2,12.39,34.92-9.72-1-25.44-4-34.92-12.39a13.69,13.69,0,0,1-4.5-10A16.6,16.6,0,0,1,84.87,36.87ZM40,88h80v32H40Zm16,48h64v64H56Zm144,64H136V136h64Zm16-80H136V88h80v32Z"
+                      ></path>
+                    </svg>
+                  </div>
                 </div>
-                <div
-                  class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
-                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/e8ceecd9-43b1-41e5-92b8-8c0f63a91cc8.png");'
-                ></div>
+                
               </div>
             </header>
             <div class="@container">
               <div class="@[480px]:p-4">
                 <div
                   class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4"
-                  style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://cdn.usegalileo.ai/sdxl10/657f2722-817a-4fd7-9192-744edb881461.png");'
+                  style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("/static/32.jpg");'
                 >
                   <div class="flex flex-col gap-2 text-center">
                     <h1
                       class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
                     >
-                      Happy Birthday, My Love
+                      Test 
                     </h1>
                     <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
-                      12 beautiful memories we've shared together
+                      12 
                     </h2>
                   </div>
-                  <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#15d0e5] text-[#112022] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]"
-                  >
-                    <span class="truncate">Start Experience</span>
-                  </button>
+                 
                 </div>
               </div>
             </div>
             <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+            
               <div class="flex flex-col gap-3">
                 <div
                   class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/0faad955-b555-449a-9f7b-69110f2866a1.png");'
+                  style='background-image: url("/static/20.jpg");'
                 ></div>
+                <p class="text-white text-lg font-bold leading-tight tracking-[-0.015em] text-center">Test 1</p>
               </div>
               <div class="flex flex-col gap-3">
                 <div
                   class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/11cc4fda-2fe4-46a6-9bba-d942f416c0d0.png");'
+                  style='background-image: url("/static/21.jpg");'
                 ></div>
+                <p class="text-white text-lg font-bold leading-tight tracking-[-0.015em] text-center">Test 2</p>
               </div>
               <div class="flex flex-col gap-3">
                 <div
                   class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/2f6d1634-e4a6-4c5a-994d-4f61dafe4846.png");'
+                  style='background-image: url("/static/22.jpg");'
                 ></div>
+                <p class="text-white text-lg font-bold leading-tight tracking-[-0.015em] text-center">Test 3</p>
               </div>
               <div class="flex flex-col gap-3">
                 <div
                   class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/748c323a-47e3-46f7-b3b7-42cec7c380a7.png");'
+                  style='background-image: url("/static/23.jpg");'
                 ></div>
+                <p class="text-white text-lg font-bold leading-tight tracking-[-0.015em] text-center">Test 4</p>
               </div>
               <div class="flex flex-col gap-3">
                 <div
                   class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                  style='background-image: url("https://cdn.usegalileo.ai/replicate/12dcf886-d894-4e77-ae10-31a491e526cf.png");'
+                  style='background-image: url("/static/24.jpg");'
                 ></div>
+                <p class="text-white text-lg font-bold leading-tight tracking-[-0.015em] text-center">Test 5</p>
               </div>
               <div class="flex flex-col gap-3">
                 <div
                   class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/85db47aa-5680-4c79-bdbd-cfa82f1207ab.png");'
+                  style='background-image: url("/static/25.jpg");'
                 ></div>
+                <p class="text-white text-lg font-bold leading-tight tracking-[-0.015em] text-center">Test 6</p>
               </div>
               <div class="flex flex-col gap-3">
                 <div
                   class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/171c951f-d2be-442d-ad9a-35f91391a7de.png");'
+                  style='background-image: url("/static/26.jpg");'
                 ></div>
+                <p class="text-white text-lg font-bold leading-tight tracking-[-0.015em] text-center">Test 7</p>
               </div>
               <div class="flex flex-col gap-3">
                 <div
                   class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/556951ad-ed43-4389-918b-3eac90068903.png");'
+                  style='background-image: url("/static/27.jpg");'
                 ></div>
+                <p class="text-white text-lg font-bold leading-tight tracking-[-0.015em] text-center">Test 8</p>
               </div>
               <div class="flex flex-col gap-3">
                 <div
                   class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/33a529ff-c561-45bc-8d93-90bf131bfaff.png");'
+                  style='background-image: url("/static/28.jpg");'
                 ></div>
+                <p class="text-white text-lg font-bold leading-tight tracking-[-0.015em] text-center">Test 9</p>
               </div>
               <div class="flex flex-col gap-3">
                 <div
                   class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/f6459fd3-59e6-4f58-88e3-82bb42c64a21.png");'
+                  style='background-image: url("/static/29.jpg");'
                 ></div>
+                <p class="text-white text-lg font-bold leading-tight tracking-[-0.015em] text-center">Test 10</p>
               </div>
               <div class="flex flex-col gap-3">
                 <div
                   class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/9a27bbc7-5b71-41c4-972f-f827a304f683.png");'
+                  style='background-image: url("/static/30.jpg");'
                 ></div>
+                <p class="text-white text-lg font-bold leading-tight tracking-[-0.015em] text-center">Test 11</p>
               </div>
               <div class="flex flex-col gap-3">
                 <div
                   class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/672d66ed-629c-48ce-94ae-35ad36f290b8.png");'
+                  style='background-image: url("/static/31.jpg");'
                 ></div>
+                <p class="text-white text-lg font-bold leading-tight tracking-[-0.015em] text-center">Test 12</p>
+              </div>
               </div>
             </div>
           </div>
