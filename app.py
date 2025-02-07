@@ -23,6 +23,7 @@ def note():
 def gallery():
     return render_template('gallery.html')  # Ensure gallery.html exists
 
+
 @app.route("/", methods=["GET", "POST"])
 def password_page():
     if request.method == "POST":
@@ -46,6 +47,54 @@ def home():
 def logout():
     session.pop("authenticated", None)  # Remove session
     return redirect(url_for("password_page"))
+
+@app.route('/note1')
+def note1():
+    return render_template('note1.html')
+
+@app.route('/note2')
+def note2():
+    return render_template('note2.html')
+
+@app.route('/note3')
+def note3():
+    return render_template('note3.html')
+
+@app.route('/note4')
+def note4():
+    return render_template('note4.html')
+
+@app.route('/note5')
+def note5():
+    return render_template('note5.html')
+
+@app.route('/note6')
+def note6():
+    return render_template('note6.html')
+
+@app.route('/note7')
+def note7():
+    return render_template('note7.html')
+
+@app.route('/note8')
+def note8():
+    return render_template('note8.html')
+
+@app.route('/note9')
+def note9():
+    return render_template('note9.html')
+
+@app.route('/note10')
+def note10():
+    return render_template('note10.html')
+
+@app.route('/note11')
+def note11():
+    return render_template('note11.html')
+
+@app.route('/note12')
+def note12():
+    return render_template('note12.html')
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -9,29 +9,44 @@
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <style>
     body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      width: 100%;
-      overflow-x: hidden;
-      background: linear-gradient(45deg, #222222, #000000, #1d1d1d, #000000);
-      background-size: 400% 400%;
-      animation: gradientAnimation 15s ease infinite;
-      color: #fff;
-      font-family: Epilogue, "Noto Sans", sans-serif;
-    }
-
-    @keyframes gradientAnimation {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
-    }
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+            background: linear-gradient(45deg, #000000, #373737, #000000, #000000);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .fade-in { opacity: 0; animation: fadeInAnimation ease 1.5s forwards; }
+        .fade-in-delay-1 { animation-delay: 0.5s; }
+        .fade-in-delay-2 { animation-delay: 1s; }
+        .fade-in-delay-3 { animation-delay: 1.5s; }
+        @keyframes fadeInAnimation {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .grid-item {
+            transition: transform 0.5s ease, opacity 0.5s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .grid-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
     .relative-position {
       position: relative;
@@ -54,16 +69,62 @@
     }
   </style>
 </head>
+
 <body>
+  
   <div class="background"></div>
   <div class="relative flex size-full min-h-screen flex-col dark group/design-root">
+    <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#333] px-10 py-3">
+      <div class="flex items-center gap-4 text-white">
+        <div class="size-4">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z"
+              fill="currentColor"
+            ></path>
+          </svg>
+        </div>
+        <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">The Memory Lane</h2>
+      </div>
+      <div class="flex gap-2">
+        <button
+        class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#e6195d] text-[#ffffff] text-sm font-bold tracking-[0.015em] leading-none"
+    >
+        <span class="truncate flex items-center h-full">Kashish</span>
+    </button>
+    
+        
+        <a href="/flower">
+          <button
+            class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#333] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
+          >
+            <div class="text-white" data-icon="Gift" data-size="20px" data-weight="regular">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                <path
+                  d="M216,72H180.92c.39-.33.79-.65,1.17-1A29.53,29.53,0,0,0,192,49.57,32.62,32.62,0,0,0,158.44,16,29.53,29.53,0,0,0,137,25.91a54.94,54.94,0,0,0-9,14.48,54.94,54.94,0,0,0-9-14.48A29.53,29.53,0,0,0,97.56,16,32.62,32.62,0,0,0,64,49.57,29.53,29.53,0,0,0,73.91,71c.38.33.78.65,1.17,1H40A16,16,0,0,0,24,88v32a16,16,0,0,0,16,16v64a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V136a16,16,0,0,0,16-16V88A16,16,0,0,0,216,72ZM149,36.51a13.69,13.69,0,0,1,10-4.5h.49A16.62,16.62,0,0,1,176,49.08a13.69,13.69,0,0,1-4.5,10c-9.49,8.4-25.24,11.36-35,12.4C137.7,60.89,141,45.5,149,36.51Zm-64.09.36A16.63,16.63,0,0,1,96.59,32h.49a13.69,13.69,0,0,1,10,4.5c8.39,9.48,11.35,25.2,12.39,34.92-9.72-1-25.44-4-34.92-12.39a13.69,13.69,0,0,1-4.5-10A16.6,16.6,0,0,1,84.87,36.87ZM40,88h80v32H40Zm16,48h64v64H56Zm144,64H136V136h64Zm16-80H136V88h80v32Z"
+                ></path>
+              </svg>
+            </div>
+          </button>
+        </a>
+        
+      </div>
+    </header>
     <div class="layout-container flex h-full grow flex-col">
       <div class="px-40 flex flex-1 justify-center py-5">
         <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
           <div class="@container">
             <div class="@[480px]:px-4 @[480px]:py-3">
+            
+              <div class="flex items-center justify-between px-10 py-3">
+              </div>
               <div class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden bg-black @[480px]:rounded-xl min-h-[520px] gradient-overlay relative-position" style='background-image: url("/static/5.jpg");'></div>
             </div>
+          </div>
+          <div class="flex items-center justify-between whitespace-nowrap  px-50 py-3">
+          </div>
+          <p class="text-3xl font-bold leading-tight tracking-[-0.025em] @[480px]:text-4xl @[480px]:font-bold @[480px]:leading-tight @[480px]:tracking-[-0.025em]">thank you for tolerationg me till this momemt</p>
+          <div class="flex items-center justify-between whitespace-nowrap  px-50 py-3">
           </div>
           <div class="flex gap-4 py-6 px-4">
             <div class="flex grow basis-0 flex-col items-stretch gap-4">
@@ -91,172 +152,167 @@
               <div class="flex items-center justify-center"><p class="text-white text-sm font-normal leading-normal">Seconds</p></div>
             </div>
           </div>
-           <div class="relative flex items-center justify-center bg-black aspect-video rounded-xl overflow-hidden">
-    <video id="videoPlayer" class="w-full h-full object-cover" poster="/static/17.jpg">
-        <source src="/static/17.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <button id="playButton" class="absolute flex items-center justify-center rounded-full size-16 bg-black/40 text-white transition-opacity duration-300 opacity-100">
-        <svg id="playIcon" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-            <path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"></path>
-        </svg>
-        <svg id="pauseIcon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-            <path d="M96,224a16,16,0,0,1-16-16V48a16,16,0,0,1,32,0V208A16,16,0,0,1,96,224ZM176,48V208a16,16,0,0,1-32,0V48a16,16,0,0,1,32,0Z"></path>
-        </svg>
-    </button>
-</div>
-
-<script>
-    const video = document.getElementById("videoPlayer");
-    const playButton = document.getElementById("playButton");
-    const playIcon = document.getElementById("playIcon");
-    const pauseIcon = document.getElementById("pauseIcon");
-
-    playButton.addEventListener("click", () => {
-        if (video.paused) {
-            video.play();
-        } else {
-            video.pause();
-        }
-    });
-
-    video.addEventListener("play", () => {
-        playIcon.classList.add("hidden");
-        pauseIcon.classList.remove("hidden");
-        playButton.style.opacity = "0"; // Hide button when playing
-    });
-
-    video.addEventListener("pause", () => {
-        playIcon.classList.remove("hidden");
-        pauseIcon.classList.add("hidden");
-        playButton.style.opacity = "1"; // Show button when paused
-    });
-
-    video.addEventListener("ended", () => {
-        playIcon.classList.remove("hidden");
-        pauseIcon.classList.add("hidden");
-        playButton.style.opacity = "1"; // Show button when video ends
-    });
-</script>
-
+          
 
         
           <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
-            <div class="flex flex-col gap-3 pb-3">
-              <div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl gradient-overlay relative-position" style='background-image: url("/static/1.jpg");'></div>
+            <div class="flex flex-col gap-3 pb-3 grid-item">
+              <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl" style='background-image: url("/static/1.jpg");'></div>
               <div>
-                <p class="text-white text-base font-medium leading-normal">January 1, 2020</p>
-                <p class="text-white text-sm font-normal leading-normal">Happy New Year!</p>
+                <p class="text-white text-base font-medium leading-normal">October 11, 2024</p>
+                <p class="text-white text-sm font-normal leading-normal"> Shadi Pe Couple Vibes</p>
               </div>
             </div>
-            <div class="flex flex-col gap-3 pb-3">
-              <div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl gradient-overlay relative-position" style='background-image: url("/static/2.jpg");'></div>
+            <div class="flex flex-col gap-3 pb-3 grid-item">
+              <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl" style='background-image: url("/static/2.jpg");'></div>
               <div>
-                <p class="text-white text-base font-medium leading-normal">February 14, 2020</p>
-                <p class="text-white text-sm font-normal leading-normal">Happy Valentine's Day!</p>
+                <p class="text-white text-base font-medium leading-normal">October 11, 2024</p>
+                <p class="text-white text-sm font-normal leading-normal">Garba L but Still Happy</p>
               </div>
             </div>
-            <div class="flex flex-col gap-3 pb-3">
-              <div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl gradient-overlay relative-position" style='background-image: url("/static/3.jpg");'></div>
+            <div class="flex flex-col gap-3 pb-3 grid-item">
+              <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl" style='background-image: url("/static/3.jpg");'></div>
               <div>
-                <p class="text-white text-base font-medium leading-normal">March 17, 2020</p>
-                <p class="text-white text-sm font-normal leading-normal">Happy St. Patrick's Day!</p>
+                <p class="text-white text-base font-medium leading-normal">February 5, 2024</p>
+                <p class="text-white text-sm font-normal leading-normal">Vibes Match Via Telepathy</p>
               </div>
             </div>
-            <div class="flex flex-col gap-3 pb-3">
-              <div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl gradient-overlay relative-position" style='background-image: url("/static/4.jpg");'></div>
+            <div class="flex flex-col gap-3 pb-3 grid-item">
+              <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl" style='background-image: url("/static/4.jpg");'></div>
               <div>
-                <p class="text-white text-base font-medium leading-normal">May 5, 2020</p>
-                <p class="text-white text-sm font-normal leading-normal">Cinco de Mayo</p>
+                <p class="text-white text-base font-medium leading-normal">September 22, 2024</p>
+                <p class="text-white text-sm font-normal leading-normal">Mirror and Lighting were good..chalo photo lete hai</p>
               </div>
             </div>
-            <div class="flex flex-col gap-3 pb-3">
-              <div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl gradient-overlay relative-position" style='background-image: url("/static/16.jpg");'></div>
+            <div class="flex flex-col gap-3 pb-3 grid-item">
+              <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl" style='background-image: url("/static/16.jpg");'></div>
               <div>
-                <p class="text-white text-base font-medium leading-normal">June 30, 2020</p>
-                <p class="text-white text-sm font-normal leading-normal">Happy Birthday!</p>
+                <p class="text-white text-base font-medium leading-normal">November 11, 2024</p>
+                <p class="text-white text-sm font-normal leading-normal">Confidence and Kashish are the keys to success</p>
               </div>
             </div>
-            <div class="flex flex-col gap-3 pb-3">
-              <div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl gradient-overlay relative-position" style='background-image: url("/static/6.jpg");'></div>
+            <div class="flex flex-col gap-3 pb-3 grid-item">
+              <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl" style='background-image: url("/static/6.jpg");'></div>
               <div>
-                <p class="text-white text-base font-medium leading-normal">August 20, 2020</p>
-                <p class="text-white text-sm font-normal leading-normal">Happy Anniversary!</p>
+                <p class="text-white text-base font-medium leading-normal">December 10, 2024</p>
+                <p class="text-white text-sm font-normal leading-normal">Nothing is better than McD ... with you obv </p>
               </div>
             </div>
-            <div class="flex flex-col gap-3 pb-3">
-              <div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl gradient-overlay relative-position" style='background-image: url("/static/7.jpg");'></div>
+            <div class="flex flex-col gap-3 pb-3 grid-item">
+              <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl" style='background-image: url("/static/7.jpg");'></div>
               <div>
-                <p class="text-white text-base font-medium leading-normal">September 22, 2020</p>
-                <p class="text-white text-sm font-normal leading-normal">First day of Fall</p>
+                <p class="text-white text-base font-medium leading-normal">December 7, 2024</p>
+                <p class="text-white text-sm font-normal leading-normal">My Hoodie and My Girl with also My Hoodie </p>
               </div>
             </div>
-            <div class="flex flex-col gap-3 pb-3">
-              <div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl gradient-overlay relative-position" style='background-image: url("/static/8.jpg");'></div>
+            <div class="flex flex-col gap-3 pb-3 grid-item">
+              <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl" style='background-image: url("/static/8.jpg");'></div>
               <div>
-                <p class="text-white text-base font-medium leading-normal">November 11, 2020</p>
-                <p class="text-white text-sm font-normal leading-normal">Happy Thanksgiving!</p>
+                <p class="text-white text-base font-medium leading-normal">September 22, 2024</p>
+                <p class="text-white text-sm font-normal leading-normal">The Lift was Empty but we were well behaved</p>
               </div>
             </div>
-            <div class="flex flex-col gap-3 pb-3">
-              <div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl gradient-overlay relative-position" style='background-image: url("/static/9.jpg");'></div>
+            <div class="flex flex-col gap-3 pb-3 grid-item">
+              <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl" style='background-image: url("/static/9.jpg");'></div>
               <div>
-                <p class="text-white text-base font-medium leading-normal">January 1, 2021</p>
-                <p class="text-white text-sm font-normal leading-normal">Happy Holidays!</p>
+                <p class="text-white text-base font-medium leading-normal">October 27, 2024</p>
+                <p class="text-white text-sm font-normal leading-normal">This one has no context but ok cute</p>
               </div>
             </div>
-            <div class="flex flex-col gap-3 pb-3">
-              <div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl gradient-overlay relative-position" style='background-image: url("/static/10.jpg");'></div>
+            <div class="flex flex-col gap-3 pb-3 grid-item">
+              <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl" style='background-image: url("/static/10.jpg");'></div>
               <div>
-                <p class="text-white text-base font-medium leading-normal">February 14, 2021</p>
-                <p class="text-white text-sm font-normal leading-normal">Merry Christmas!</p>
+                <p class="text-white text-base font-medium leading-normal">June 12, 2024</p>
+                <p class="text-white text-sm font-normal leading-normal">First Date or Wot ? Mr. DIY will always be the best</p>
               </div>
             </div>
-            <div class="flex flex-col gap-3 pb-3">
-              <div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl gradient-overlay relative-position" style='background-image: url("/static/11.jpg");'></div>
+            <div class="flex flex-col gap-3 pb-3 grid-item">
+              <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl" style='background-image: url("/static/11.jpg");'></div>
               <div>
-                <p class="text-white text-base font-medium leading-normal">March 17, 2021</p>
-                <p class="text-white text-sm font-normal leading-normal">Happy Easter!</p>
+                <p class="text-white text-base font-medium leading-normal">November 13, 2024</p>
+                <p class="text-white text-sm font-normal leading-normal">Naam ka Ethnic Day but ok you look cute as always</p>
               </div>
             </div>
-            <div class="flex flex-col gap-3 pb-3">
-              <div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl gradient-overlay relative-position" style='background-image: url("/static/12.jpg");'></div>
+            <div class="flex flex-col gap-3 pb-3 grid-item">
+              <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl" style='background-image: url("/static/12.jpg");'></div>
               <div>
-                <p class="text-white text-base font-medium leading-normal">May 5, 2021</p>
-                <p class="text-white text-sm font-normal leading-normal">Happy Independence Day!</p>
+                <p class="text-white text-base font-medium leading-normal">June 13, 2024</p>
+                <p class="text-white text-sm font-normal leading-normal">Aukat ke upar ka cafe but Second Date or Wot ?</p>
               </div>
             </div>
-            <div class="flex flex-col gap-3 pb-3">
-              <div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl gradient-overlay relative-position" style='background-image: url("/static/13.jpg");'></div>
+            <div class="flex flex-col gap-3 pb-3 grid-item">
+              <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl" style='background-image: url("/static/13.jpg");'></div>
               <div>
-                <p class="text-white text-base font-medium leading-normal">June 30, 2021</p>
-                <p class="text-white text-sm font-normal leading-normal">Happy Halloween!</p>
+                <p class="text-white text-base font-medium leading-normal">October 25, 2024</p>
+                <p class="text-white text-sm font-normal leading-normal">Smol Hands UwU Big Nakhre also UwU</p>
               </div>
             </div>
-            <div class="flex flex-col gap-3 pb-3">
-              <div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl gradient-overlay relative-position" style='background-image: url("/static/14.jpg");'></div>
+            <div class="flex flex-col gap-3 pb-3 grid-item">
+              <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl" style='background-image: url("/static/14.jpg");'></div>
               <div>
-                <p class="text-white text-base font-medium leading-normal">August 20, 2021</p>
-                <p class="text-white text-sm font-normal leading-normal">Happy Hanukkah!</p>
+                <p class="text-white text-base font-medium leading-normal">November 17, 2024</p>
+                <p class="text-white text-sm font-normal leading-normal">Oh it was 17 Nov .. that was mine back then hmmmm</p>
               </div>
             </div>
-            <div class="flex flex-col gap-3 pb-3">
-              <div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl gradient-overlay relative-position" style='background-image: url("/static/15.jpg");'></div>
+            <div class="flex flex-col gap-3 pb-3 grid-item">
+              <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl" style='background-image: url("/static/15.jpg");'></div>
               <div>
-                <p class="text-white text-base font-medium leading-normal">September 22, 2021</p>
-                <p class="text-white text-sm font-normal leading-normal">Happy Mother's Day!</p>
+                <p class="text-white text-base font-medium leading-normal">October 21, 2024</p>
+                <p class="text-white text-sm font-normal leading-normal">Same University but somehow peaceful ?</p>
               </div>
             </div>
-           
           </div>
-          <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-            <label class="flex flex-col min-w-40 flex-1">
-              <textarea
-                placeholder="Add a note..."
-                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-white focus:outline-0 focus:ring-0 border border-[#1a1a1a] bg-[#333333] focus:border-[#1a1a1a] min-h-36 placeholder:text-gray-500 p-[15px] text-base font-normal leading-normal"
-              ></textarea>
-            </label>
-          </div>
+
+          
+          <div class="relative flex items-center justify-center bg-black aspect-video rounded-xl overflow-hidden">
+            <video id="videoPlayer" class="w-full h-full object-cover" poster="/static/17.jpg">
+                <source src="/static/17.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <button id="playButton" class="absolute flex items-center justify-center rounded-full size-16 bg-black/40 text-white transition-opacity duration-300 opacity-100">
+                <svg id="playIcon" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"></path>
+                </svg>
+                <svg id="pauseIcon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                    <path d="M96,224a16,16,0,0,1-16-16V48a16,16,0,0,1,32,0V208A16,16,0,0,1,96,224ZM176,48V208a16,16,0,0,1-32,0V48a16,16,0,0,1,32,0Z"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <script>
+            const video = document.getElementById("videoPlayer");
+            const playButton = document.getElementById("playButton");
+            const playIcon = document.getElementById("playIcon");
+            const pauseIcon = document.getElementById("pauseIcon");
+        
+            playButton.addEventListener("click", () => {
+                if (video.paused) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            });
+        
+            video.addEventListener("play", () => {
+                playIcon.classList.add("hidden");
+                pauseIcon.classList.remove("hidden");
+                playButton.style.opacity = "0"; // Hide button when playing
+            });
+        
+            video.addEventListener("pause", () => {
+                playIcon.classList.remove("hidden");
+                pauseIcon.classList.add("hidden");
+                playButton.style.opacity = "1"; // Show button when paused
+            });
+        
+            video.addEventListener("ended", () => {
+                playIcon.classList.remove("hidden");
+                pauseIcon.classList.add("hidden");
+                playButton.style.opacity = "1"; // Show button when video ends
+            });
+        </script>
+        
+          
         </div>
       </div>
     </div>
@@ -295,4 +351,36 @@
         document.getElementById("seconds").innerHTML = "0";
       }
     }, 1000);
+  
+    // Function to handle the visibility of grid items
+    const handleVisibility = () => {
+      const gridItems = document.querySelectorAll('.grid-item');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+  
+      gridItems.forEach(item => {
+        observer.observe(item);
+      });
+    };
+  
+    // Call the handleVisibility function when the DOM content is loaded
+    document.addEventListener('DOMContentLoaded', handleVisibility);
   </script>
+  <style>
+    .grid-item {
+      transition: transform 0.5s ease, opacity 0.5s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .grid-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>

@@ -314,93 +314,126 @@
   <script src="main.js"></script>
   <script src="{{ url_for('static', filename='js/main.js') }}"></script>
   <style>
-  .note {
-    opacity: 1;
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 0;
-    background-color: transparent;
-    border-radius: 0;
-    box-shadow: none;
-    width: auto; /* Allow flexible width */
-    font-family: 'Fira Code', monospace; /* Ensure consistent CMD-style font */
-    font-size: 20px;
-    color: rgb(255, 255, 255);
-    white-space: pre-wrap;
-    line-height: 1.4;
-}
-
-.cursor {
-    display: inline-block;
-    width: 10px;
-    height: 20px;
-    background-color: black;
-    animation: blink 0.6s infinite alternate;
-    vertical-align: middle;
-}
-
-@keyframes blink {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
-}
-
-@keyframes loading {
-    0% { content: " /"; }
-    33% { content: " -"; }
-    66% { content: " \\"; }
-    100% { content: " |"; }
-}
-
-.loading::after {
-    content: " |";
-    display: inline-block;
-    animation: loading 0.6s infinite steps(4);
-}
-</style>
-</head>
-<body class="glitter-bg">
-
-<div class="note" id="note"><span id="cursor" class="cursor"></span></div>
-
-<script>
-function typewriterEffect(element, text, speed) {
-    element.textContent = "";
-    let index = 0;
-    let formattedText = "";
-    
-    function type() {
-        if (index < text.length) {
-            let currentChar = text.charAt(index);
-            formattedText += currentChar;
-            
-            if (currentChar === '\n') {
-                element.innerHTML = formattedText + '<span class="loading"></span>';
-                setTimeout(() => {
-                    element.innerHTML = formattedText;
-                    setTimeout(type, speed * 2);
-                }, 1200); // Two cycles of loading animation
-                index++;
-                return;
-            }
-            
-            element.innerHTML = formattedText + '<span id="cursor" class="cursor"></span>';
-            index++;
-            setTimeout(type, speed);
-        } else {
-            const cursor = document.getElementById("cursor");
-            if (cursor) cursor.remove(); // Ensure cursor exists before removing
-        }
+    .note {
+        opacity: 1;
+        position: relative;
+        padding: 10px;
+        background-color: transparent;
+        font-family: 'Fira Code', monospace;
+        font-size: 20px;
+        color: rgb(255, 255, 255);
+        white-space: pre-wrap;
+        line-height: 1.4;
+        width: 100%;
     }
-    type();
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-    const noteDiv = document.getElementById("note");
-    const text = `Note: This is a test paragraph to verify how the typewriter effect works on multiline text.\nThe effect should continue line by line without breaking the animation.\nEach character should appear sequentially, maintaining the natural typing flow.`;
-    typewriterEffect(noteDiv, text, 100);
-});
-</script>
-</body>
-</html>
+  
+    .cursor {
+        display: inline-block;
+        width: 10px;
+        height: 20px;
+        background-color: black;
+        animation: blink 0.6s infinite alternate;
+        vertical-align: middle;
+    }
+  
+    @keyframes blink {
+        0% { opacity: 1; }
+        100% { opacity: 0; }
+    }
+  
+    .loading::after {
+        content: " |";
+        display: inline-block;
+        animation: loading 0.6s infinite steps(4);
+    }
+  
+    /* Adjusted container */
+    .flex-container {
+        position: absolute;
+        left: 10%; /* Moves it away from the left */
+        width: 33.33%; /* Covers one-third of the page */
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+  
+    .layout-content-container {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        width: 100%;
+    }
+  
+    .flex-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1rem;
+        width: 100%;
+    }
+  
+    .min-w-72 {
+        min-width: 18rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+  </style>
+  
+  <body class="glitter-bg">
+    <div class="flex-container">
+      <div class="layout-content-container">
+          <div class="flex-wrap">
+              <div class="min-w-72">
+                  <div class="note" id="note"><span id="cursor" class="cursor"></span></div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </body>
+  
+  <script>
+  function typewriterEffect(element, text, speed) {
+      element.textContent = "";
+      element.style.fontSize = "17px";
+  
+      let index = 0;
+      let formattedText = "";
+  
+      function type() {
+          if (index < text.length) {
+              let currentChar = text.charAt(index);
+              formattedText += currentChar;
+              
+              if (currentChar === '\n') {
+                  element.innerHTML = formattedText + '<span class="loading"></span>';
+                  setTimeout(() => {
+                      element.innerHTML = formattedText;
+                      setTimeout(type, speed * 2);
+                  }, 200);
+                  index++;
+                  return;
+              }
+              
+              element.innerHTML = formattedText + '<span id="cursor" class="cursor"></span>';
+              index++;
+              setTimeout(type, speed * 0.6);
+          } else {
+              const cursor = document.getElementById("cursor");
+              if (cursor) cursor.remove();
+          }
+      }
+      type();
+  }
+  
+  document.addEventListener("DOMContentLoaded", function() {
+      const noteDiv = document.getElementById("note");
+      const text = `In Your Arms, I Find Home\n\nThe first time I saw you, time stood still,\nHazel eyes, a warmth that could melt the chill.\nWrapped in winter’s soft embrace,\nYou smiled—my heart lost its place.\n\nA bus ride, a whispered "hi,"\nA simple seat, yet a world so wide.\nBlushes burning, a dream come true,\nSince that day, all roads lead to you.\n\nYou shine in moments big and small,\nDrinking water, standing tall.\nA silly laugh, a sleepy call,\nI cherish, I love—I adore them all.\n\nYour scent lingers, soft and light,\nLike moonlit whispers in the night.\nIn snowfall dreams and midnight skies,\nI long to hold you, hand in mine.\n\nThrough silent days, through endless waits,\nYour presence, love, it resonates.\nNo distance dims, no time can sway,\nIn your arms, I’ll always stay.`;
+      typewriterEffect(noteDiv, text, 100);
+  });
+  </script>
+  
