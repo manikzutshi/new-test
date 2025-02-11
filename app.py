@@ -4,7 +4,7 @@ app = Flask(__name__)
 app.secret_key = "your_secret_key_here"  # Change this to a strong, random key
 
 # Define the correct password
-CORRECT_PASSWORD = "143"
+CORRECT_PASSWORD = "kashishbestgirl@120203"
 
 # Route for the main page
 @app.route('/')
