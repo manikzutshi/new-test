@@ -3,7 +3,7 @@
 <head>
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
     <link rel="stylesheet" as="style" onload="this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" />
-    <title>Galileo Design</title>
+    <title>Twelve Notes</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <style>
@@ -61,7 +61,7 @@
             height: 100%;
             width: 100%;
             overflow-x: hidden;
-            background: linear-gradient(45deg, #000000, #373737, #000000, #000000);
+            background: linear-gradient(45deg, #000000, #585858, #000000, #000000);
             background-size: 400% 400%;
             animation: gradientAnimation 15s ease infinite;
             color: #fff;
@@ -227,22 +227,20 @@
     <div class="layout-container flex h-full grow flex-col w-full max-w-[100vw] mx-auto">
         <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#333] px-10 py-3">
             <div class="flex items-center gap-4 text-white">
-              <div class="size-4">
-                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z"
-                    fill="currentColor"
-                  ></path>
-                </svg>
-              </div>
+                <div class="size-6">
+                    <img src="/static/paper.png" alt="Letter Icon" class="size-6">
+                </div>
+                
               <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Twelve notes</h2>
             </div>
             <div class="flex gap-2">
-              <button
-              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#e6195d] text-[#ffffff] text-sm font-bold tracking-[0.015em] leading-none"
-          >
-              <span class="truncate flex items-center h-full">Kashish</span>
-          </button>
+                <a href="/profile">
+                    <button
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#e6195d] text-[#ffffff] text-sm font-bold tracking-[0.015em] leading-none"
+                >
+                    <span class="truncate flex items-center h-full">Kashish</span>
+                </button>
+                </a>
           
               
               <a href="/flower">
@@ -382,11 +380,12 @@
                         </a>
                         <a href="javascript:void(0);" class="flex flex-col gap-3 grid-item" onclick="loadNoteContent('/note11')">
                             <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl" style='background-image: url("/static/30.jpg");'></div>
-                            <p class="text-white text-lg font-bold leading-tight tracking-[-0.015em] text-center">Test 11</p>
+                            <p class="text-white text-lg font-bold leading-tight tracking-[-0.015em] text-center">A Promise That I'll Always Keep</p>
                         </a>
                         <a href="javascript:void(0);" class="flex flex-col gap-3 grid-item" onclick="loadNoteContent('/note12')">
                             <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl" style='background-image: url("/static/31.jpg");'></div>
-                            <p class="text-white text-lg font-bold leading-tight tracking-[-0.015em] text-center">Test 12</p>
+                            <p class="text-white text-lg font-bold leading-tight tracking-[-0.015em] text-center">
+                                A Letter for When You're Overthinking</p>
                         </a>
                     </div>
                 </div>

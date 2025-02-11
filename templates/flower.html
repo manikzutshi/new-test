@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" href="img/flowers.png" type="image/x-icon">
-    <title>flowers</title>
+    <title>Flower</title>
 </head>
 <body class="container">
   <!-- Pembuat code: https://codepen.io/mdusmanansari/pen/BamepLe -->
@@ -393,6 +393,7 @@
               </div>
           </div>
       </div>
+      
     </div>
   </body>
   
@@ -437,3 +438,50 @@
   });
   </script>
   
+ <!-- Audio Element -->
+<audio id="bg-music" loop autoplay muted>
+  <source src="/static/y2mate.com - Taylor Swift  cardigan Official Lyric Video.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<!-- Mute/Unmute Button -->
+<button id="mute-btn"
+  class="bg-[#333] text-white p-3 rounded-full w-12 h-12 flex items-center justify-center shadow-lg"
+  style="position: fixed; top: 20px; left: 20px; z-index: 1000;">
+  🔊
+</button>
+
+<script>
+  const music = document.getElementById("bg-music");
+  const muteBtn = document.getElementById("mute-btn");
+
+  // Autoplay with forced unmute like the video example
+  window.addEventListener("load", () => {
+      music.muted = true;
+      music.play().then(() => {
+          setTimeout(() => {
+              music.muted = false;  // Unmute after autoplay starts
+              music.volume = 1.0;    // Ensure full volume
+          }, 500);
+      }).catch((error) => {
+          console.log("Autoplay blocked. User interaction needed.");
+      });
+  });
+
+  // Mute/Unmute button functionality
+  function toggleMusic() {
+      if (music.muted) {
+          music.muted = false;
+          music.volume = 1.0;
+          muteBtn.innerHTML = "🔊";
+      } else {
+          music.muted = true;
+          muteBtn.innerHTML = "🔇";
+      }
+  }
+
+  muteBtn.addEventListener("click", toggleMusic);
+</script>
+
+</body>
+</html>

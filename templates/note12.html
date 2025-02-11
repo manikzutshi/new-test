@@ -12,26 +12,27 @@
         <div class="gap-1 px-6 flex flex-1 justify-center py-5">
             <div class="layout-content-container flex flex-col w-2/3">
                 <div class="flex w-full p-4 justify-start">
-                    <p class="text-white tracking-light text-[32px] font-bold leading-tight w-full text-left">Notfffe</p>
+                    <p class="text-white tracking-light text-[32px] font-bold leading-tight w-full text-left">13/11/2024 ethnic day ? nvm joke again </p>
                 </div>
                 <div class="flex w-full p-4 justify-start">
                     <div class="note typewriter text-white" id="note">
-This is a test paragraph to verify the typewriter effect.
-Each new line should appear properly with 
-The text should go left to right smoothly.
-This is a test paragraph to verify the typewriter effect.
-Each new line should appear properly with 
-The text should go left to right smoothly.
-This is a test paragraph to verify the typewriter effect.
-Each new line should appear properly with 
-The text should go left to right smoothly.
-This is a test paragraph to verify the typewriter effect.
-Each new line should appear properly with 
-The text should go left to right smoothly.
-This is a test paragraph to verify the typewriter effect.
-Each new line should appear properly with 
-The text should go left to right smoothly.
+I know how your mind works, how thoughts spiral and tangle until they feel too
+heavy to carry. I know you overthink, replaying moments and questioning yourself,
+and I wish I could lift that weight off your shoulders, even for just a second.
 
+You don’t have to have everything figured out right now. You don’t have to be
+perfect. And you definitely don’t have to go through this alone. When everything
+feels too much, when your thoughts drown you, please—breathe. Take a step back.
+
+And I need you to know this—especially when I’m the one making things harder. If
+I ever annoy you, upset you, or hurt you, just tell me. I promise I’ll listen. The
+last thing I ever want is to add to your worries or your pain, and if I do, I will
+do whatever it takes to make it right.
+
+You are stronger than you think, but you don’t always have to be. Lean on me. Let
+me be your safe place, the voice that reminds you it’s okay to pause, to rest, to
+just be. No matter what’s in your mind, no matter how lost or tired you feel—I am
+here, always. And I always will be.
                         <span id="cursor" class="cursor"></span>
                     </div>
                 </div>
@@ -40,13 +41,98 @@ The text should go left to right smoothly.
             <div class="layout-content-container flex flex-col w-1/3">
               <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
                   <div class="flex flex-col gap-3">
-                      <div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl" style='background-image: url("https://cdn.usegalileo.ai/sdxl10/59680912-48ab-4af1-a033-6a88c41bdce8.png");'></div>
-                  </div>
+                    <div class="w-full bg-center bg-no-repeat aspect-[3/4] bg-cover rounded-xl" style='background-image: url("/static/1212.jpg");'></div>
+                </div>
               </div>
           </div>
         </div>
     </div>
-    <h1 class="note-title text-white text-3xl font-bold">On the Tough Days</h1>
+    <h1 class="note-title text-white text-3xl font-bold">A Letter for When You're Overthinking</h1>
 
 </body>
 </html>
+<p class="text-3xl font-bold leading-tight tracking-[-0.025em] @[480px]:text-4xl @[480px]:font-bold @[480px]:leading-tight @[480px]:tracking-[-0.025em]">time i have spent making this website ?</p>
+          <div class="flex items-center justify-between whitespace-nowrap  px-50 py-3">
+          </div>
+          <div class="flex gap-4 py-6 px-4">
+            <div class="flex grow basis-0 flex-col items-stretch gap-4">
+              <div class="flex h-14 grow items-center justify-center rounded-xl px-3 bg-[#333333]">
+                <p id="days" class="text-white text-lg font-bold leading-tight tracking-[-0.015em]"></p>
+              </div>
+              <div class="flex items-center justify-center"><p class="text-white text-sm font-normal leading-normal">Days</p></div>
+            </div>
+            <div class="flex grow basis-0 flex-col items-stretch gap-4">
+              <div class="flex h-14 grow items-center justify-center rounded-xl px-3 bg-[#333333]">
+                <p id="hours" class="text-white text-lg font-bold leading-tight tracking-[-0.015em]"></p>
+              </div>
+              <div class="flex items-center justify-center"><p class="text-white text-sm font-normal leading-normal">Hours</p></div>
+            </div>
+            <div class="flex grow basis-0 flex-col items-stretch gap-4">
+              <div class="flex h-14 grow items-center justify-center rounded-xl px-3 bg-[#333333]">
+                <p id="minutes" class="text-white text-lg font-bold leading-tight tracking-[-0.015em]"></p>
+              </div>
+              <div class="flex items-center justify-center"><p class="text-white text-sm font-normal leading-normal">Minutes</p></div>
+            </div>
+            <div class="flex grow basis-0 flex-col items-stretch gap-4">
+              <div class="flex h-14 grow items-center justify-center rounded-xl px-3 bg-[#333333]">
+                <p id="seconds" class="text-white text-lg font-bold leading-tight tracking-[-0.015em]"></p>
+              </div>
+              <div class="flex items-center justify-center"><p class="text-white text-sm font-normal leading-normal">Seconds</p></div>
+            </div>
+          </div>
+          <script>
+            // Set the date we're counting down to
+            const countDownDate = new Date("Jan 29, 2025 23:13:00").getTime();
+          
+            // Update the count down every 1 second
+            const x = setInterval(function() {
+          
+              // Get today's date and time
+              const now = new Date().getTime();
+          
+              // Find the distance between now and the count down date
+              const distance = now - countDownDate;
+          
+              // Time calculations for days, hours, minutes and seconds
+              const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+              const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+              const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+              const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          
+              // Display the result in the respective elements
+              document.getElementById("days").innerHTML = days;
+              document.getElementById("hours").innerHTML = hours;
+              document.getElementById("minutes").innerHTML = minutes;
+              document.getElementById("seconds").innerHTML = seconds;
+          
+              // If the count down is over, write some text 
+              if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("days").innerHTML = "0";
+                document.getElementById("hours").innerHTML = "0";
+                document.getElementById("minutes").innerHTML = "0";
+                document.getElementById("seconds").innerHTML = "0";
+              }
+            }, 1000);
+          
+            // Function to handle the visibility of grid items
+            const handleVisibility = () => {
+              const gridItems = document.querySelectorAll('.grid-item');
+              const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                  if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                  }
+                });
+              }, {
+                threshold: 0.1
+              });
+          
+              gridItems.forEach(item => {
+                observer.observe(item);
+              });
+            };
+          
+            // Call the handleVisibility function when the DOM content is loaded
+            document.addEventListener('DOMContentLoaded', handleVisibility);
+          </script>

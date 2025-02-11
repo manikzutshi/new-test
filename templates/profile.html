@@ -1,0 +1,317 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800"
+    />
+
+    <title>Profile</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        overflow-x: hidden;
+        background: linear-gradient(45deg, #000000, #373737, #000000, #000000);
+        background-size: 400% 400%;
+        animation: gradientAnimation 15s ease infinite;
+        color: #fff;
+            font-family: 'Poppins', sans-serif;
+        display: flex;
+        flex-direction: column;
+    }
+    @keyframes gradientAnimation {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    </style>
+  </head>
+  <body>
+    <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#333] px-10 py-3">
+        <div class="flex items-center gap-4 text-white">
+          <div class="size-6">
+            <img src="/static/account.png" alt="Letter Icon" class="size-6">
+
+          </div>
+          <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Profile</h2>
+        </div>
+        <div class="flex gap-2">
+          <button
+          class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#e6195d] text-[#ffffff] text-sm font-bold tracking-[0.015em] leading-none"
+      >
+          <span class="truncate flex items-center h-full">Kashish</span>
+      </button>
+      
+          
+          <a href="/flower">
+            <button
+              class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#333] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
+            >
+              <div class="text-white" data-icon="Gift" data-size="20px" data-weight="regular">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                  <path
+                    d="M216,72H180.92c.39-.33.79-.65,1.17-1A29.53,29.53,0,0,0,192,49.57,32.62,32.62,0,0,0,158.44,16,29.53,29.53,0,0,0,137,25.91a54.94,54.94,0,0,0-9,14.48,54.94,54.94,0,0,0-9-14.48A29.53,29.53,0,0,0,97.56,16,32.62,32.62,0,0,0,64,49.57,29.53,29.53,0,0,0,73.91,71c.38.33.78.65,1.17,1H40A16,16,0,0,0,24,88v32a16,16,0,0,0,16,16v64a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V136a16,16,0,0,0,16-16V88A16,16,0,0,0,216,72ZM149,36.51a13.69,13.69,0,0,1,10-4.5h.49A16.62,16.62,0,0,1,176,49.08a13.69,13.69,0,0,1-4.5,10c-9.49,8.4-25.24,11.36-35,12.4C137.7,60.89,141,45.5,149,36.51Zm-64.09.36A16.63,16.63,0,0,1,96.59,32h.49a13.69,13.69,0,0,1,10,4.5c8.39,9.48,11.35,25.2,12.39,34.92-9.72-1-25.44-4-34.92-12.39a13.69,13.69,0,0,1-4.5-10A16.6,16.6,0,0,1,84.87,36.87ZM40,88h80v32H40Zm16,48h64v64H56Zm144,64H136V136h64Zm16-80H136V88h80v32Z"
+                  ></path>
+                </svg>
+              </div>
+            </button>
+          </a>
+          
+        </div>
+      </header>
+    <div class="relative flex size-full min-h-screen flex-col " style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <div class="gap-1 px-6 flex flex-1 justify-center py-5">
+            <div class="layout-content-container flex flex-col w-80 h-full flex">
+                <!-- Full-height Favourites Section -->
+                <div class="flex flex-col w-full h-full flex-1 gap-3 rounded-xl bg-[#333333] px-4 py-3">
+                    <!-- Favourites Header -->
+                    <div class="flex items-center gap-4 overflow-hidden">
+                        <div
+                            class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-14 shrink-0"
+                            style='background-image: url("/static/Spotify.png");'
+                            ></div>
+                        <div class="flex-1">
+                            <p class="text-[#FFFFFF] text-base font-bold leading-tight truncate">Favourites</p>
+                        </div>
+                    </div>
+            
+                    <!-- Music Items inside Favourites -->
+                    <div class="flex flex-col gap-3 mt-4">
+                        <div class="flex items-center gap-4 overflow-hidden bg-[#444] px-4 py-3 rounded-xl">
+                            <div
+                                class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-14 shrink-0"
+                                style='background-image: url("/static/ab67616d0000b27395f754318336a07e85ec59bc.jpeg");'
+                            ></div>
+                            <div class="flex-1">
+                                <p class="text-[#FFFFFF] text-[0.9375rem] font-bold leading-tight truncate">Cardigan</p>
+                                <p class="text-[#CBCBCB] text-sm font-normal leading-normal truncate">Taylor Swift</p>
+                            </div>
+                            <button class="audioButton flex shrink-0 items-center justify-center rounded-full size-10 bg-[#FFFFFF] text-black" data-audio="/static/y2mate.com - Taylor Swift  cardigan Official Lyric Video.mp3">
+                              <div class="text-inherit audioIcon">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                                      <path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"></path>
+                                  </svg>
+                              </div>
+                          </button>
+      
+                          
+                          <audio id="globalAudio"></audio>
+                                    </div>
+            
+                        <div class="flex items-center gap-4 overflow-hidden bg-[#444] px-4 py-3 rounded-xl">
+                            <div
+                                class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-14 shrink-0"
+                                style='background-image: url("/static/nvmp.jpeg");'
+                            ></div>
+                            <div class="flex-1">
+                                <p class="text-[#FFFFFF] text-[0.9375rem] font-bold leading-tight truncate">The Night We Met</p>
+                                <p class="text-[#CBCBCB] text-sm font-normal leading-normal truncate">Lord Huron</p>
+                            </div>
+                            <button class="audioButton flex shrink-0 items-center justify-center rounded-full size-10 bg-[#FFFFFF] text-black" data-audio="/static/y2mate.com - Lord Huron  The Night We Met Official Audio.mp3">
+                              <div class="text-inherit audioIcon">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                                      <path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"></path>
+                                  </svg>
+                              </div>
+                          </button>
+      
+                          
+                          <audio id="globalAudio"></audio>
+                              </div>
+                        <div class="flex items-center gap-4 overflow-hidden bg-[#444] px-4 py-3 rounded-xl">
+                          <div
+                              class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-14 shrink-0"
+                              style='background-image: url("/static/5fbcfb7258117e88cb73b45e25c88b01.webp");'
+                          ></div>
+                          <div class="flex-1">
+                              <p class="text-[#FFFFFF] text-[0.9375rem] font-bold leading-tight truncate">Yellow</p>
+                              <p class="text-[#CBCBCB] text-sm font-normal leading-normal truncate">Coldplay</p>
+                          </div>
+                          <button class="audioButton flex shrink-0 items-center justify-center rounded-full size-10 bg-[#FFFFFF] text-black" data-audio="/static/y2mate.com - Coldplay  Yellow Lyrics.mp3">
+                            <div class="text-inherit audioIcon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                                    <path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"></path>
+                                </svg>
+                            </div>
+                        </button>
+    
+                        
+                        <audio id="globalAudio"></audio>
+                          </div>
+                      <div class="flex items-center gap-4 overflow-hidden bg-[#444] px-4 py-3 rounded-xl">
+                        <div
+                            class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-14 shrink-0"
+                            style='background-image: url("/static/Rockstar-Hindi-2011-20221212023139-500x500.webp");'
+                        ></div>
+                        <div class="flex-1">
+                            <p class="text-[#FFFFFF] text-[0.9375rem] font-bold leading-tight truncate">Tum Ho</p>
+                            <p class="text-[#CBCBCB] text-sm font-normal leading-normal truncate">Mohit Chauhan</p>
+                        </div>
+                        <button class="audioButton flex shrink-0 items-center justify-center rounded-full size-10 bg-[#FFFFFF] text-black" data-audio="/static/y2mate.com - Rockstar Tum Ho Lyrical Video Song  Ranbir Kapoor  Nargis  A R Rahman Mohit Chauhan Kavita.mp3">
+                          <div class="text-inherit audioIcon">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                                  <path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"></path>
+                              </svg>
+                          </div>
+                      </button>
+
+                      
+                      <audio id="globalAudio"></audio>
+                    </div>
+                    <div class="flex items-center gap-4 overflow-hidden bg-[#444] px-4 py-3 rounded-xl">
+                      <div
+                          class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-14 shrink-0"
+                          style='background-image: url("/static/artworks-tNqWFcVRNuAw-0-t1080x1080.webp");'
+                      ></div>
+                      <div class="flex-1">
+                          <p class="text-[#FFFFFF] text-[0.9375rem] font-bold leading-tight truncate">Paper Rings</p>
+                          <p class="text-[#CBCBCB] text-sm font-normal leading-normal truncate">Taylor Swift</p>
+                      </div>
+                      <button class="audioButton flex shrink-0 items-center justify-center rounded-full size-10 bg-[#FFFFFF] text-black" data-audio="/static/y2mate.com - Taylor Swift  Paper Rings Official Audio.mp3">
+                        <div class="text-inherit audioIcon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                                <path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"></path>
+                            </svg>
+                        </div>
+                    </button>
+
+                    
+                    <audio id="globalAudio"></audio>
+                  
+                    
+                  </div>
+                    </div>
+                </div>
+            </div>
+            
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="flex p-4 @container">
+              <div class="flex w-full flex-col gap-4 @[520px]:flex-row @[520px]:justify-between @[520px]:items-center">
+                <div class="flex gap-4">
+                  <div
+                    class="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-32 w-32"
+                    style='background-image: url("/static/103.jpg");'
+                  ></div>
+                  <div class="flex flex-col justify-center">
+                    <p class="text-[#FFFFFF] text-[22px] font-bold leading-tight tracking-[-0.015em]">Kashish</p>
+                    <p class="text-[#CBCBCB] text-base font-normal leading-normal">@kashishdhamija_</p>
+                  </div>
+                </div>
+                <div class="flex w-full max-w-[480px] gap-3 @[480px]:w-auto">
+                  <div class="flex justify-center items-center p-4">
+                    <button
+                        class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#333333] text-[#FFFFFF] text-sm font-bold leading-normal tracking-[0.015em] flex-1 @[480px]:flex-auto"
+                        onclick="window.open('https://www.instagram.com/kashishdhamija_?igsh=MWx0YmdmcjMycGxhYg==', '_blank');"
+                    >
+                        <span class="truncate">Follow</span>
+                    </button>
+                </div>
+                
+                </div>
+              </div>
+            </div>
+            <h2 class="text-[#FFFFFF] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Bio</h2>
+            <p class="text-[#FFFFFF] text-base font-normal leading-normal pb-3 pt-1 px-4">
+              A beautiful, chaotic, and endlessly loving soul who turns the simplest moments into magic 🌟
+            </p>
+            <h2 class="text-[#FFFFFF] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Featured</h2>
+            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+              <div class="flex flex-col gap-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("/static/1001.jpg");'
+                ></div>
+              </div>
+              <div class="flex flex-col gap-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("/static/102.jpg");'
+                ></div>
+              </div>
+              <div class="flex flex-col gap-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                  style='background-image: url("/static/101.jpg");'
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+
+const audio = document.getElementById("globalAudio"); // Single audio element
+const buttons = document.querySelectorAll(".audioButton");
+let currentButton = null; // Track the currently active button
+
+buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        const audioSrc = button.getAttribute("data-audio");
+        const audioIcon = button.querySelector(".audioIcon");
+
+        // If switching to a different button, reset previous icon and play new audio
+        if (currentButton && currentButton !== button) {
+            resetIcons();
+            audio.src = audioSrc;
+            audio.play();
+            updateIcon(audioIcon, true);
+            currentButton = button;
+        } else {
+            // If clicking the same button, toggle play/pause
+            if (audio.paused) {
+                audio.src = audioSrc; // Ensure correct source
+                audio.play();
+                updateIcon(audioIcon, true);
+            } else {
+                audio.pause();
+                updateIcon(audioIcon, false);
+            }
+        }
+
+        currentButton = button; // Update tracking
+    });
+});
+
+// Function to update icons
+function updateIcon(icon, isPlaying) {
+    icon.innerHTML = isPlaying ? `
+        <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+            <path d="M96,224a16,16,0,0,1-16-16V48a16,16,0,0,1,32,0V208A16,16,0,0,1,96,224ZM176,48V208a16,16,0,0,1-32,0V48a16,16,0,0,1,32,0Z"></path>
+        </svg>` // Pause icon
+    : `
+        <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+            <path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"></path>
+        </svg>`; // Play icon
+}
+
+// Reset all icons when switching songs
+function resetIcons() {
+    document.querySelectorAll(".audioIcon").forEach(icon => {
+        updateIcon(icon, false);
+    });
+}
+
+// Ensure button resets when audio ends
+audio.addEventListener("ended", () => {
+    if (currentButton) {
+        updateIcon(currentButton.querySelector(".audioIcon"), false);
+        currentButton = null;
+    }
+});
+
+
+</script>
+
+
+  </body>
+</html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galileo Design</title>
+  <title>Memory Lane</title>
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin=""/>
   <link rel="stylesheet" as="style" onload="this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Epilogue%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"/>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -76,22 +76,20 @@
   <div class="relative flex size-full min-h-screen flex-col dark group/design-root">
     <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#333] px-10 py-3">
       <div class="flex items-center gap-4 text-white">
-        <div class="size-4">
-          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z"
-              fill="currentColor"
-            ></path>
-          </svg>
+        <div class="size-6">
+          <img src="/static/photo.png" alt="Letter Icon" class="size-6">
+
         </div>
         <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">The Memory Lane</h2>
       </div>
       <div class="flex gap-2">
-        <button
-        class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#e6195d] text-[#ffffff] text-sm font-bold tracking-[0.015em] leading-none"
-    >
-        <span class="truncate flex items-center h-full">Kashish</span>
-    </button>
+        <a href="/profile">
+          <button
+          class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#e6195d] text-[#ffffff] text-sm font-bold tracking-[0.015em] leading-none"
+      >
+          <span class="truncate flex items-center h-full">Kashish</span>
+      </button>
+      </a>
     
         
         <a href="/flower">
@@ -116,10 +114,25 @@
           <div class="@container">
             <div class="@[480px]:px-4 @[480px]:py-3">
             
-              <div class="flex items-center justify-between px-10 py-3">
-              </div>
-              <div class="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden bg-black @[480px]:rounded-xl min-h-[520px] gradient-overlay relative-position" style='background-image: url("/static/5.jpg");'></div>
-            </div>
+              <div class="flex items-center justify-between px-10 py-3"></div>
+              <div class="relative flex items-center justify-center bg-black aspect-video rounded-xl overflow-hidden">
+                <video id="videoPlayer" class="w-full h-full object-cover" poster="/static/17.jpg">
+                    <source src="/static/Sparkle X Her.mp4" type="video/mp4">
+                   Your browser does not support the video tag.
+                </video>
+                <button id="playButton" class="absolute flex items-center justify-center rounded-full size-16 bg-black/40 text-white transition-opacity duration-300 opacity-100">
+                  <svg id="playIcon" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                      <path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"></path>
+                  </svg>
+                  <svg id="pauseIcon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                      <path d="M96,224a16,16,0,0,1-16-16V48a16,16,0,0,1,32,0V208A16,16,0,0,1,96,224ZM176,48V208a16,16,0,0,1-32,0V48a16,16,0,0,1,32,0Z"></path>
+                  </svg>
+              </button>
+              <button id="fullscreenButton" class="absolute bottom-4 right-4 bg-black/40 text-white p-2 rounded-md">
+                ⛶
+            </button>
+            </div>            
+          </div>
           </div>
           <div class="flex items-center justify-between whitespace-nowrap  px-50 py-3">
           </div>
@@ -173,7 +186,7 @@
             <div class="flex flex-col gap-3 pb-3 grid-item">
               <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl" style='background-image: url("/static/3.jpg");'></div>
               <div>
-                <p class="text-white text-base font-medium leading-normal">February 5, 2024</p>
+                <p class="text-white text-base font-medium leading-normal">February 8 , 2024</p>
                 <p class="text-white text-sm font-normal leading-normal">Vibes Match Via Telepathy</p>
               </div>
             </div>
@@ -251,7 +264,7 @@
               <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl" style='background-image: url("/static/14.jpg");'></div>
               <div>
                 <p class="text-white text-base font-medium leading-normal">November 17, 2024</p>
-                <p class="text-white text-sm font-normal leading-normal">Oh it was 17 Nov .. that was mine back then hmmmm</p>
+                <p class="text-white text-sm font-normal leading-normal">My Sweater ? Nah Your Sweater :) </p>
               </div>
             </div>
             <div class="flex flex-col gap-3 pb-3 grid-item">
@@ -264,54 +277,76 @@
           </div>
 
           
-          <div class="relative flex items-center justify-center bg-black aspect-video rounded-xl overflow-hidden">
-            <video id="videoPlayer" class="w-full h-full object-cover" poster="/static/17.jpg">
-                <source src="/static/17.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <button id="playButton" class="absolute flex items-center justify-center rounded-full size-16 bg-black/40 text-white transition-opacity duration-300 opacity-100">
-                <svg id="playIcon" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"></path>
-                </svg>
-                <svg id="pauseIcon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                    <path d="M96,224a16,16,0,0,1-16-16V48a16,16,0,0,1,32,0V208A16,16,0,0,1,96,224ZM176,48V208a16,16,0,0,1-32,0V48a16,16,0,0,1,32,0Z"></path>
-                </svg>
-            </button>
-        </div>
+    
         
         <script>
-            const video = document.getElementById("videoPlayer");
-            const playButton = document.getElementById("playButton");
-            const playIcon = document.getElementById("playIcon");
-            const pauseIcon = document.getElementById("pauseIcon");
-        
-            playButton.addEventListener("click", () => {
-                if (video.paused) {
-                    video.play();
-                } else {
-                    video.pause();
-                }
-            });
-        
-            video.addEventListener("play", () => {
-                playIcon.classList.add("hidden");
-                pauseIcon.classList.remove("hidden");
-                playButton.style.opacity = "0"; // Hide button when playing
-            });
-        
-            video.addEventListener("pause", () => {
-                playIcon.classList.remove("hidden");
-                pauseIcon.classList.add("hidden");
-                playButton.style.opacity = "1"; // Show button when paused
-            });
-        
-            video.addEventListener("ended", () => {
-                playIcon.classList.remove("hidden");
-                pauseIcon.classList.add("hidden");
-                playButton.style.opacity = "1"; // Show button when video ends
-            });
-        </script>
-        
+          const video = document.getElementById("videoPlayer");
+          const playButton = document.getElementById("playButton");
+          const playIcon = document.getElementById("playIcon");
+          const pauseIcon = document.getElementById("pauseIcon");
+      
+          playButton.addEventListener("click", () => {
+              if (video.paused) {
+                  video.play();
+              } else {
+                  video.pause();
+              }
+          });
+      
+          video.addEventListener("play", () => {
+              playIcon.classList.add("hidden");
+              pauseIcon.classList.remove("hidden");
+              playButton.style.opacity = "0";
+          });
+      
+          video.addEventListener("pause", () => {
+              playIcon.classList.remove("hidden");
+              pauseIcon.classList.add("hidden");
+              playButton.style.opacity = "1";
+          });
+      
+          video.addEventListener("ended", () => {
+              playIcon.classList.remove("hidden");
+              pauseIcon.classList.add("hidden");
+              playButton.style.opacity = "1";
+          });
+      
+          window.addEventListener("load", () => {
+              video.muted = true;
+              video.play().then(() => {
+                  video.muted = false;
+                  playIcon.classList.add("hidden");
+                  pauseIcon.classList.remove("hidden");
+                  playButton.style.opacity = "0";
+              }).catch((error) => {
+                  console.log('Autoplay prevented. Video must be played manually.');
+                  playButton.style.opacity = "1";
+              });
+          });
+      
+          // Show play button on mouse enter and hide on mouse leave
+          const container = document.querySelector(".absolute");
+          container.addEventListener("mouseenter", () => {
+              playButton.style.opacity = "1";
+          });
+          container.addEventListener("mouseleave", () => {
+              if (!video.paused) {
+                  playButton.style.opacity = "0";
+              }
+          });
+          const fullscreenButton = document.getElementById("fullscreenButton");
+
+fullscreenButton.addEventListener("click", () => {
+    if (!document.fullscreenElement) {
+        video.requestFullscreen().catch(err => {
+            console.log(`Error attempting to enable fullscreen mode: ${err.message}`);
+        });
+    } else {
+        document.exitFullscreen();
+    }
+});
+
+      </script>
           
         </div>
       </div>
