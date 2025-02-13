@@ -376,6 +376,68 @@
           </div>
           <div class="flex items-center justify-between whitespace-nowrap  px-50 py-3">
           </div>
+          <div class="flex gap-4 py-6 px-4">
+            <div class="flex grow basis-0 flex-col items-stretch gap-4">
+                <div class="flex h-14 grow items-center justify-center rounded-xl px-3 bg-[#333333]">
+                    <p class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">12</p>
+                </div>
+                <div class="flex items-center justify-center"><p class="text-white text-sm font-normal leading-normal">Days</p></div>
+            </div>
+            <div class="flex grow basis-0 flex-col items-stretch gap-4">
+                <div class="flex h-14 grow items-center justify-center rounded-xl px-3 bg-[#333333]">
+                    <p class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">17</p>
+                </div>
+                <div class="flex items-center justify-center"><p class="text-white text-sm font-normal leading-normal">Hours</p></div>
+            </div>
+            <div class="flex grow basis-0 flex-col items-stretch gap-4">
+                <div class="flex h-14 grow items-center justify-center rounded-xl px-3 bg-[#333333]">
+                    <p class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">14</p>
+                </div>
+                <div class="flex items-center justify-center"><p class="text-white text-sm font-normal leading-normal">Minutes</p></div>
+            </div>
+            <div class="flex grow basis-0 flex-col items-stretch gap-4">
+                <div class="flex h-14 grow items-center justify-center rounded-xl px-3 bg-[#333333]">
+                    <p class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">29</p>
+                </div>
+                <div class="flex items-center justify-center"><p class="text-white text-sm font-normal leading-normal">Seconds</p></div>
+            </div>
+        </div>
+        
+          <script>
+            // Set the date we're counting down to
+            const countDownDate = new Date("Jan 28, 2025 18:54:00").getTime();
+          
+            // Update the count down every 1 second
+            const x = setInterval(function() {
+          
+              // Get today's date and time
+              const now = new Date().getTime();
+          
+              // Find the distance between now and the count down date
+              const distance = now - countDownDate;
+          
+              // Time calculations for days, hours, minutes and seconds
+              const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+              const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+              const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+              const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          
+              // Display the result in the respective elements
+              document.getElementById("days").innerHTML = days;
+              document.getElementById("hours").innerHTML = hours;
+              document.getElementById("minutes").innerHTML = minutes;
+              document.getElementById("seconds").innerHTML = seconds;
+          
+              // If the count down is over, write some text 
+              if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("days").innerHTML = "0";
+                document.getElementById("hours").innerHTML = "0";
+                document.getElementById("minutes").innerHTML = "0";
+                document.getElementById("seconds").innerHTML = "0";
+              }
+            }, 1000);
+          </script>        
           
           
         </div>
