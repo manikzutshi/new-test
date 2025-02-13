@@ -15,6 +15,12 @@ def index():
 @app.route('/flower')
 def flower():
     return render_template('flower.html')  # Render the flower page
+
+@app.route('/flower2')
+def flower2():
+    return render_template('flower2.html')  # Render the flower page
+
+
 @app.route('/note')
 def note():
     return render_template('note.html')  # Ensure note.html exists
@@ -32,7 +38,7 @@ def password_page():
             session["authenticated"] = True  # Set session variable
             return redirect(url_for("home"))  # Redirect to home if correct
         else:
-            return render_template("pass.html", error="Incorrect password!")  # Show error message
+            return render_template("index.html", error="Incorrect password!")  # Show error message
     
     return render_template("pass.html")
 
@@ -99,6 +105,15 @@ def note12():
 @app.route('/profile')
 def profile():
     return render_template('profile.html')
+
+@app.route('/v1')
+def v1():
+    return render_template('v1.html')
+
+@app.route('/v2')
+def v2():
+    return render_template('v2.html')
+
 
 if __name__ == "__main__":
     app.run(debug=True)

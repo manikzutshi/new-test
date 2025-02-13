@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <title>Galileo Design</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        overflow: hidden; /* Prevent scrollbars when "No" button moves */
+        background: linear-gradient(45deg, #553642, #a26f96, #ffbafb, #89467e);
+        background-size: 400% 400%;
+        animation: gradientAnimation 15s ease infinite;
+        color: #fff;
+        font-family: 'Poppins', sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative; /* Establish a positioning context */
+      }
+
+      @keyframes gradientAnimation {
+        0% {
+          background-position: 0% 50%;
+        }
+
+        50% {
+          background-position: 100% 50%;
+        }
+
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f3e7eb] px-10 py-3">
+          <div class="flex items-center gap-4 text-[#1b0d12]">
+            <div class="size-4">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z" fill="currentColor"></path>
+              </svg>
+            </div>
+            <h2 class="text-[#1b0d12] text-lg font-bold leading-tight tracking-[-0.015em]">Valentine?</h2>
+          </div>
+          <a href="/profile">
+            <button
+            class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#e6195d] text-[#ffffff] text-sm font-bold tracking-[0.015em] leading-none"
+        >
+            <span class="truncate flex items-center h-full">Kashish</span>
+        </button>
+
+        </a>
+        </header>
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col w-[512px] max-w-[512px] py-5 max-w-[960px] flex-1">
+            <div class="@container">
+              <div class="@[480px]:p-4">
+                <div
+                  class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4"
+                  style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("/static/6.jpg");'
+                >
+                  <h1
+                    class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] text-center"
+                  >
+                    Will you be my Valentine?
+                  </h1>
+                  <div class="relative flex items-center justify-center gap-6 w-full h-24">
+                    <!-- Yes Button -->
+                    <button
+                      id="yesButton"
+                      class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 sm:h-12 sm:px-5 bg-[#ed125b] text-[#fcf8f9] text-sm font-bold leading-normal tracking-tight sm:text-base"
+                    >
+                      <span class="truncate">Yes</span>
+                    </button>
+                    <!-- No Button -->
+                    <button
+                      id="noButton"
+                      class="absolute flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 sm:h-12 sm:px-5 bg-[#f3e7eb] text-[#1b0d12] text-sm font-bold leading-normal tracking-tight sm:text-base"
+                    >
+                      <span class="truncate">No</span>
+                    </button>
+                  </div>
+                </div>
+
+                <script>
+                  // Select Buttons
+                  const noButton = document.getElementById("noButton");
+                  const yesButton = document.getElementById("yesButton");
+
+                  // Initialize scale for "Yes" button
+                  let yesScale = 1;
+
+                  // Texts for "Yes" button
+                  const yesTexts = [
+  "YES ?...",               
+  "NOOOO ? WHYY...",
+  "Please...",
+  "Are you sure?",
+  "Don't say no, please",
+  "I love you, please?",
+  "I'll be sad...",
+  "Don't make me sad",
+  "Please, just say yes",
+  "Can't you say yes?",
+  "It would mean everything to me",
+  "You're my everything",
+  "Please don't say no",
+  "I'm begging you",
+  "just say yes please",
+  "Give me a chance"
+];                  let textIndex = 0;
+
+                  // Function to move "No" Button within container boundaries
+                  function moveNoButton() {
+                    const container = noButton.parentElement; // The relative container
+                    const containerRect = container.getBoundingClientRect();
+
+                    const buttonWidth = noButton.offsetWidth;
+                    const buttonHeight = noButton.offsetHeight;
+
+                    const padding = 10; // Padding from container edges
+
+                    // Calculate maximum positions within the container
+                    const maxX = container.clientWidth - buttonWidth - padding;
+                    const maxY = container.clientHeight - buttonHeight - padding;
+
+                    // Generate random positions
+                    const x = Math.random() * maxX;
+                    const y = Math.random() * maxY;
+
+                    // Get current position of "Yes" button
+                    const yesRect = yesButton.getBoundingClientRect();
+                    const noRectAfterMove = {
+                      left: containerRect.left + x,
+                      right: containerRect.left + x + buttonWidth,
+                      top: containerRect.top + y,
+                      bottom: containerRect.top + y + buttonHeight
+                    };
+
+                    // Simple collision detection
+                    const overlap = !(
+                      noRectAfterMove.left > yesRect.right ||
+                      noRectAfterMove.right < yesRect.left ||
+                      noRectAfterMove.top > yesRect.bottom ||
+                      noRectAfterMove.bottom < yesRect.top
+                    );
+
+                    // If overlapping, recalculate positions
+                    if (overlap) {
+                      moveNoButton(); // Recursive call until no overlap
+                      return;
+                    }
+
+                    // Animate the movement using GSAP for smooth transition
+                    gsap.to(noButton, {
+                      duration: 0.3,
+                      left: x + 'px',
+                      top: y + 'px',
+                      ease: "power1.out"
+                    });
+
+                    // Increment and animate the "Yes" button scale
+                    yesScale += 0.05;
+                    gsap.to(yesButton, {
+                      duration: 0.3,
+                      scale: yesScale,
+                      ease: "power1.out"
+                    });
+
+                    // Change the text of the "Yes" button
+                    if (textIndex < yesTexts.length) {
+                      yesButton.querySelector("span").textContent = yesTexts[textIndex];
+                      textIndex++;
+                    } else {
+                      // Optionally, reset the text index to cycle the texts
+                      textIndex = 0;
+                      yesButton.querySelector("span").textContent = yesTexts[textIndex];
+                      textIndex++;
+                    }
+                  }
+
+                  // Event Listeners for "No" Button Interaction
+                  noButton.addEventListener("mouseover", moveNoButton);
+                  noButton.addEventListener("click", (e) => {
+                    e.preventDefault(); // Prevent any default action
+                    moveNoButton();
+                  });
+                  noButton.addEventListener("touchstart", moveNoButton);
+
+                  // Ensure "No" button starts at a random position within the container on load
+                  window.onload = () => {
+                    moveNoButton();
+                  };
+
+                  // Prevent the "No" button from moving outside on window resize
+                  window.addEventListener("resize", () => {
+                    moveNoButton();
+                  });
+
+                  // Optional: Limit the maximum scale of the "Yes" button
+                  const MAX_SCALE = 2;
+                  yesButton.addEventListener("click", () => {
+  if (yesScale >= MAX_SCALE) return;
+  // Redirect to /v2.html when "Yes" is clicked
+  window.location.href = "/v2";
+});
+                </script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

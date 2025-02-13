@@ -1,0 +1,394 @@
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Plus+Jakarta+Sans%3Awght%40400%3B500%3B700%3B800"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <title>Galileo Design</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        function addToCart(itemName) {
+            let cart = document.getElementById("cart-items");
+            if (!cart) return;
+    
+            let newItem = document.createElement("p");
+            newItem.textContent = itemName;
+            newItem.classList.add("text-sm", "mt-1");
+            cart.appendChild(newItem);
+        }
+    
+        function addAllToCart() {
+            let cart = document.getElementById("cart-items");
+            if (!cart) return;
+    
+            cart.innerHTML = ""; // Clear cart before adding all items
+    
+            let items = document.querySelectorAll("p.text-base"); // Select item name elements
+            items.forEach(item => {
+                let newItem = document.createElement("p");
+                newItem.textContent = item.textContent;
+                newItem.classList.add("text-sm", "mt-1");
+                cart.appendChild(newItem);
+            });
+    
+            let message = document.createElement("p");
+            message.textContent = "Ok you want to see me broke no issues anything for my babygirl .. you are priceless";
+            message.style.color = "#ed125b";
+            message.style.fontWeight = "bold";
+            cart.appendChild(message);
+        }
+    </script>
+    
+    
+    <style>
+        .cart {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #000000;
+            padding: 10px;
+            border: 2px solid #ed125b;
+            border-radius: 10px;
+            width: 200px;
+        }
+
+        body,
+        html {
+          margin: 0;
+          padding: 0;
+          height: 100%;
+          width: 100%;
+          overflow: hidden; /* Prevent scrollbars when "No" button moves */
+          background: linear-gradient(45deg, #553642, #a26f96, #ffbafb, #89467e);
+          background-size: 400% 400%;
+          animation: gradientAnimation 15s ease infinite;
+          color: #fff;
+          font-family: 'Poppins', sans-serif;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          position: relative; /* Establish a positioning context */
+        }
+  
+        @keyframes gradientAnimation {
+          0% {
+            background-position: 0% 50%;
+          }
+  
+          50% {
+            background-position: 100% 50%;
+          }
+  
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+      </style>
+  </head>
+  <body>
+    <div class="relative flex size-full min-h-screen flex-col /design-root overflow-x-hidden" style='font-family: Manrope, "Noto Sans", sans-serif;'>
+        <div class="layout-container flex h-full grow flex-col">
+          <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#333] px-10 py-3">
+            <div class="flex items-center gap-4 text-white">
+              <div class="size-4">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_6_543)">
+                  <path
+                    d="M42.1739 20.1739L27.8261 5.82609C29.1366 7.13663 28.3989 10.1876 26.2002 13.7654C24.8538 15.9564 22.9595 18.3449 20.6522 20.6522C18.3449 22.9595 15.9564 24.8538 13.7654 26.2002C10.1876 28.3989 7.13663 29.1366 5.82609 27.8261L20.1739 42.1739C21.4845 43.4845 24.5355 42.7467 28.1133 40.548C30.3042 39.2016 32.6927 37.3073 35 35C37.3073 32.6927 39.2016 30.3042 40.548 28.1133C42.7467 24.5355 43.4845 21.4845 42.1739 20.1739Z"
+                    fill="currentColor"
+                  ></path>
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M7.24189 26.4066C7.31369 26.4411 7.64204 26.5637 8.52504 26.3738C9.59462 26.1438 11.0343 25.5311 12.7183 24.4963C14.7583 23.2426 17.0256 21.4503 19.238 19.238C21.4503 17.0256 23.2426 14.7583 24.4963 12.7183C25.5311 11.0343 26.1438 9.59463 26.3738 8.52504C26.5637 7.64204 26.4411 7.31369 26.4066 7.24189C26.345 7.21246 26.143 7.14535 25.6664 7.1918C24.9745 7.25925 23.9954 7.5498 22.7699 8.14278C20.3369 9.32007 17.3369 11.4915 14.4142 14.4142C11.4915 17.3369 9.32007 20.3369 8.14278 22.7699C7.5498 23.9954 7.25925 24.9745 7.1918 25.6664C7.14534 26.143 7.21246 26.345 7.24189 26.4066ZM29.9001 10.7285C29.4519 12.0322 28.7617 13.4172 27.9042 14.8126C26.465 17.1544 24.4686 19.6641 22.0664 22.0664C19.6641 24.4686 17.1544 26.465 14.8126 27.9042C13.4172 28.7617 12.0322 29.4519 10.7285 29.9001L21.5754 40.747C21.6001 40.7606 21.8995 40.931 22.8729 40.7217C23.9424 40.4916 25.3821 39.879 27.0661 38.8441C29.1062 37.5904 31.3734 35.7982 33.5858 33.5858C35.7982 31.3734 37.5904 29.1062 38.8441 27.0661C39.879 25.3821 40.4916 23.9425 40.7216 22.8729C40.931 21.8995 40.7606 21.6001 40.747 21.5754L29.9001 10.7285ZM29.2403 4.41187L43.5881 18.7597C44.9757 20.1473 44.9743 22.1235 44.6322 23.7139C44.2714 25.3919 43.4158 27.2666 42.252 29.1604C40.8128 31.5022 38.8165 34.012 36.4142 36.4142C34.012 38.8165 31.5022 40.8128 29.1604 42.252C27.2666 43.4158 25.3919 44.2714 23.7139 44.6322C22.1235 44.9743 20.1473 44.9757 18.7597 43.5881L4.41187 29.2403C3.29027 28.1187 3.08209 26.5973 3.21067 25.2783C3.34099 23.9415 3.8369 22.4852 4.54214 21.0277C5.96129 18.0948 8.43335 14.7382 11.5858 11.5858C14.7382 8.43335 18.0948 5.9613 21.0277 4.54214C22.4852 3.8369 23.9415 3.34099 25.2783 3.21067C26.5973 3.08209 28.1187 3.29028 29.2403 4.41187Z"
+                    fill="currentColor"
+                  ></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_6_543"><rect width="48" height="48" fill="white"></rect></clipPath>
+                </defs>
+              </svg>
+            </div>
+            <h2 class="text-[#1b0d12] text-lg font-bold leading-tight tracking-[-0.015em]">Date Planner</h2>
+          </div>
+          <div class="flex flex-1 justify-end gap-8">
+        </a>
+
+
+    </a>
+    <a href="/profile">
+    <button
+    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-[#e6195d] text-[#ffffff] text-sm font-bold tracking-[0.015em] leading-none"
+>
+    <span class="truncate flex items-center h-full">Kashish</span>
+</button>
+
+</a>
+
+    
+    <a href="/flower2">
+      <button
+        class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 bg-[#333] text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
+      >
+        <div class="text-white" data-icon="Gift" data-size="20px" data-weight="regular">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+            <path
+              d="M216,72H180.92c.39-.33.79-.65,1.17-1A29.53,29.53,0,0,0,192,49.57,32.62,32.62,0,0,0,158.44,16,29.53,29.53,0,0,0,137,25.91a54.94,54.94,0,0,0-9,14.48,54.94,54.94,0,0,0-9-14.48A29.53,29.53,0,0,0,97.56,16,32.62,32.62,0,0,0,64,49.57,29.53,29.53,0,0,0,73.91,71c.38.33.78.65,1.17,1H40A16,16,0,0,0,24,88v32a16,16,0,0,0,16,16v64a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V136a16,16,0,0,0,16-16V88A16,16,0,0,0,216,72ZM149,36.51a13.69,13.69,0,0,1,10-4.5h.49A16.62,16.62,0,0,1,176,49.08a13.69,13.69,0,0,1-4.5,10c-9.49,8.4-25.24,11.36-35,12.4C137.7,60.89,141,45.5,149,36.51Zm-64.09.36A16.63,16.63,0,0,1,96.59,32h.49a13.69,13.69,0,0,1,10,4.5c8.39,9.48,11.35,25.2,12.39,34.92-9.72-1-25.44-4-34.92-12.39a13.69,13.69,0,0,1-4.5-10A16.6,16.6,0,0,1,84.87,36.87ZM40,88h80v32H40Zm16,48h64v64H56Zm144,64H136V136h64Zm16-80H136V88h80v32Z"
+            ></path>
+          </svg>
+        </div>
+      </button>
+    </a>
+
+
+          </div>
+        </header>
+        <body>
+            
+        <div class="px-40 flex flex-1 justify-center py-5">
+            <div id="cart-items" class="fixed top-100 right-10 w-64 h-640 bg-black bg-opacity-0 text-white rounded-l-lg p-4 overflow-y-auto backdrop-blur-md">
+                <h3 class="text-lg font-bold text-[#ed125b]">Your Cart</h3>
+            </div>
+            
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="@container">
+                
+                <div
+                class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4"
+                style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("/static/n.jpg");'
+              >
+                <h1
+                  class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] text-center"
+                >
+                  Post Valentine date ?
+                  saturday ?
+                </h1>
+                <div class="relative flex items-center justify-center gap-6 w-full h-24">
+                  <!-- Yes Button -->
+                  <button
+                    id="yesButton"
+                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 sm:h-12 sm:px-5 bg-[#ed125b] text-[#fcf8f9] text-sm font-bold leading-normal tracking-tight sm:text-base"
+                  >
+                    <span class="truncate">Yes</span>
+                  </button>
+                  <!-- No Button -->
+                  <button
+                    id="noButton"
+                    class="absolute flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 sm:h-12 sm:px-5 bg-[#f3e7eb] text-[#1b0d12] text-sm font-bold leading-normal tracking-tight sm:text-base"
+                  >
+                    <span class="truncate">No</span>
+                  </button>
+                </div>
+              </div>
+
+              <script>
+                // Select Buttons
+                const noButton = document.getElementById("noButton");
+                const yesButton = document.getElementById("yesButton");
+
+                // Initialize scale for "Yes" button
+                let yesScale = 1;
+
+                // Texts for "Yes" button
+                const yesTexts = [
+                  "NOOOO...",
+                  "Please...",
+                  "Are you sure...?",
+                  "Don't say no, please",
+                  "I love you, please?",
+                  "I'll be sad...",
+                  "Don't make me sad",
+                  "Please, just say yes",
+                  "Can't you say yes?",
+                  "It would mean everything to me",
+                  "You're my everything",
+                  "Please don't say no",
+                  "I'm begging you",
+                  "just say yes please",
+                  "Give me a chance"
+                ];
+                let textIndex = 0;
+
+                // Function to move "No" Button within container boundaries
+                function moveNoButton() {
+                  const container = noButton.parentElement; // The relative container
+                  const containerRect = container.getBoundingClientRect();
+
+                  const buttonWidth = noButton.offsetWidth;
+                  const buttonHeight = noButton.offsetHeight;
+
+                  const padding = 10; // Padding from container edges
+
+                  // Calculate maximum positions within the container
+                  const maxX = container.clientWidth - buttonWidth - padding;
+                  const maxY = container.clientHeight - buttonHeight - padding;
+
+                  // Generate random positions
+                  const x = Math.random() * maxX;
+                  const y = Math.random() * maxY;
+
+                  // Get current position of "Yes" button
+                  const yesRect = yesButton.getBoundingClientRect();
+                  const noRectAfterMove = {
+                    left: containerRect.left + x,
+                    right: containerRect.left + x + buttonWidth,
+                    top: containerRect.top + y,
+                    bottom: containerRect.top + y + buttonHeight
+                  };
+
+                  // Simple collision detection
+                  const overlap = !(
+                    noRectAfterMove.left > yesRect.right ||
+                    noRectAfterMove.right < yesRect.left ||
+                    noRectAfterMove.top > yesRect.bottom ||
+                    noRectAfterMove.bottom < yesRect.top
+                  );
+
+                  // If overlapping, recalculate positions
+                  if (overlap) {
+                    moveNoButton(); // Recursive call until no overlap
+                    return;
+                  }
+
+                  // Animate the movement using GSAP for smooth transition
+                  gsap.to(noButton, {
+                    duration: 0.3,
+                    left: x + 'px',
+                    top: y + 'px',
+                    ease: "power1.out"
+                  });
+
+                  // Increment and animate the "Yes" button scale
+                  yesScale += 0.05;
+                  gsap.to(yesButton, {
+                    duration: 0.3,
+                    scale: yesScale,
+                    ease: "power1.out"
+                  });
+
+                  // Change the text of the "Yes" button
+                  if (textIndex < yesTexts.length) {
+                    // Optional: Add fade-out and fade-in effect
+                    gsap.to(yesButton.querySelector("span"), {
+                      duration: 0.2,
+                      opacity: 0,
+                      onComplete: () => {
+                        yesButton.querySelector("span").textContent = yesTexts[textIndex];
+                        gsap.to(yesButton.querySelector("span"), { duration: 0.2, opacity: 1 });
+                      }
+                    });
+                    textIndex++;
+                  } else {
+                    // Optionally, reset the text index to cycle the texts
+                    textIndex = 0;
+                    gsap.to(yesButton.querySelector("span"), {
+                      duration: 0.2,
+                      opacity: 0,
+                      onComplete: () => {
+                        yesButton.querySelector("span").textContent = yesTexts[textIndex];
+                        gsap.to(yesButton.querySelector("span"), { duration: 0.2, opacity: 1 });
+                      }
+                    });
+                    textIndex++;
+                  }
+                }
+
+                // Event Listeners for "No" Button Interaction
+                noButton.addEventListener("mouseover", moveNoButton);
+                noButton.addEventListener("click", (e) => {
+                  e.preventDefault(); // Prevent any default action
+                  moveNoButton();
+                });
+                noButton.addEventListener("touchstart", moveNoButton);
+
+                // Ensure "No" button starts at a random position within the container on load
+                window.onload = () => {
+                  moveNoButton();
+                };
+
+                // Prevent the "No" button from moving outside on window resize
+                window.addEventListener("resize", () => {
+                  moveNoButton();
+                });
+
+                // Limit the maximum scale of the "Yes" button
+                const MAX_SCALE = 2;
+                yesButton.addEventListener("click", () => {
+                if (yesScale >= MAX_SCALE) return;
+                alert("guud! now send me an ss of your cart 💖");
+                });
+              </script>
+           
+                
+                <h2 class="text-[#1b0d12] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Plan your date</h2>
+                <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+                    <div class="flex flex-col gap-3 pb-3" onclick="addToCart('Lunch date')">
+                        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl" style='background-image: url("https://cdn.usegalileo.ai/sdxl10/7f0674d1-93c8-4a3c-a9fe-74ca35469e88.png");'></div>
+                        <p class="text-[#1b0d12] text-base font-medium leading-normal">Lunch date</p>
+                    </div>
+                    <div class="flex flex-col gap-3 pb-3" onclick="addToCart('Movie ?')">
+                        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl" style='background-image: url("https://cdn.usegalileo.ai/sdxl10/da50546a-951c-42e6-9d9d-99d1a4c1c80b.png");'></div>
+                        <p class="text-[#1b0d12] text-base font-medium leading-normal">Movie ?</p>
+                    </div>
+                    <div class="flex flex-col gap-3 pb-3" onclick="addToCart('Game night')">
+                        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl" style='background-image: url("https://cdn.usegalileo.ai/sdxl10/a4ba54c1-6d77-405d-aee0-54dd452905a1.png");'></div>
+                        <p class="text-[#1b0d12] text-base font-medium leading-normal">Game night</p>
+                    </div>
+                    <div class="flex flex-col gap-3 pb-3" onclick="addToCart('Picnic in the park')">
+                        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl" style='background-image: url("https://cdn.usegalileo.ai/sdxl10/52c87bca-3979-4bcc-9708-da4d3f4b61a7.png");'></div>
+                        <p class="text-[#1b0d12] text-base font-medium leading-normal">Picnic in the park</p>
+                    </div>
+                    <div class="flex flex-col gap-3 pb-3" onclick="addToCart('Brunch at home')">
+                        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl" style='background-image: url("https://cdn.usegalileo.ai/sdxl10/9f3ad35c-bb32-492e-8105-e15765dbb71d.png");'></div>
+                        <p class="text-[#1b0d12] text-base font-medium leading-normal">Brunch at home</p>
+                    </div>
+                </div>
+                <h2 class="text-[#1b0d12] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Choose your gift</h2>
+                <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+                    <div class="flex flex-col gap-3 pb-3" onclick="addToCart('Flowers')">
+                        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl" style='background-image: url("https://cdn.usegalileo.ai/sdxl10/0cb26b69-2d77-4cfd-a38a-2b4477e737a1.png");'></div>
+                        <p class="text-[#1b0d12] text-base font-medium leading-normal">Flowers</p>
+                    </div>
+                    <div class="flex flex-col gap-3 pb-3" onclick="addToCart('Chocolate')">
+                        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl" style='background-image: url("https://cdn.usegalileo.ai/sdxl10/ae556c3a-02c7-448f-bc36-e197e7b3ee8a.png");'></div>
+                        <p class="text-[#1b0d12] text-base font-medium leading-normal">Chocolate</p>
+                    </div>
+                    <div class="flex flex-col gap-3 pb-3" onclick="addToCart('Jewelry')">
+                        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl" style='background-image: url("https://cdn.usegalileo.ai/sdxl10/34e18c5f-f1b9-4817-8d8f-47625fbc8a64.png");'></div>
+                        <p class="text-[#1b0d12] text-base font-medium leading-normal">Jewelry</p>
+                    </div>
+                    <div class="flex flex-col gap-3 pb-3" onclick="addToCart('Perfume')">
+                        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl" style='background-image: url("https://cdn.usegalileo.ai/sdxl10/598a3ef9-4419-4f11-86af-e1c4fb7b2045.png");'></div>
+                        <p class="text-[#1b0d12] text-base font-medium leading-normal">Perfume</p>
+                    </div>
+                    <div class="flex flex-col gap-3 pb-3" onclick="addToCart('Personalized gift')">
+                        <div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl" style='background-image: url("https://cdn.usegalileo.ai/sdxl10/cf32d665-1990-4325-9c15-85b72f9d1fa1.png");'></div>
+                        <p class="text-[#1b0d12] text-base font-medium leading-normal">Personalized gift</p>
+                    </div>
+                </div>
+                <div class="flex px-4 py-3 justify-center">
+                    <button onclick="addAllToCart()" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#ed125b] text-[#fcf8f9] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#c30e49] transition">
+                        <span class="truncate">Add everything</span>
+                    </button>
+                    
+                    
+                </div>
+                
+            </body>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+  </body>
+</html>

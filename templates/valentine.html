@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Proposal</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden; /* Prevent scrollbars when "No" button moves */
+            background: linear-gradient(45deg, #d17198, #f5aee5, #f08beb, #cc6ebd);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative; /* Establish a positioning context */
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            position: relative; /* Relative positioning for fixed "No" button */
+        }
+
+        .btn {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: fixed; /* Fixed positioning relative to the viewport */
+        }
+
+        .yes {
+            background-color: #ff4d6d;
+            color: white;
+            bottom: 20px; /* Position "Yes" button at the bottom center */
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .yes:hover {
+            transform: translateX(-50%) scale(1.1);
+        }
+
+        .no {
+            background: #d81b60;
+            color: white;
+            border-radius: 10px;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Will you be my Valentine?</h1>
+    <div class="buttons">
+        <button class="btn yes" id="yes">Yes</button>
+        <button class="btn no" id="no">No</button>
+    </div>
+    <script>
+        const noButton = document.getElementById("no");
+        const yesButton = document.getElementById("yes");
+
+        // Function to move the "No" button within the viewport boundaries
+        function moveNoButton() {
+            const buttonWidth = noButton.offsetWidth;
+            const buttonHeight = noButton.offsetHeight;
+
+            const padding = 20; // Padding from the edges
+
+            const maxX = window.innerWidth - buttonWidth - padding;
+            const maxY = window.innerHeight - buttonHeight - padding;
+
+            const x = Math.random() * (maxX - padding) + padding;
+            const y = Math.random() * (maxY - padding) + padding;
+
+            // Animate the movement using GSAP for smooth transition
+            gsap.to(noButton, {
+                duration: 0.3,
+                left: x,
+                top: y,
+                ease: "power1.out"
+            });
+
+            // Optionally, you can also scale the "Yes" button slightly
+            gsap.to(yesButton, { 
+                scale: 1.1, 
+                duration: 0.2, 
+                yoyo: true, 
+                repeat: 1 
+            });
+        }
+
+        // Ensure the "No" button starts at a random position within the viewport
+        window.onload = () => {
+            moveNoButton();
+        };
+
+        // Event listeners to trigger the movement when interacting with the "No" button
+        noButton.addEventListener("mouseover", moveNoButton);
+        noButton.addEventListener("touchstart", moveNoButton);
+        // Optionally, prevent clicking on the "No" button
+        noButton.addEventListener("click", (e) => {
+            moveNoButton();
+            e.preventDefault();
+        });
+
+        // Adjust "No" button position on window resize to keep it within boundaries
+        window.addEventListener("resize", () => {
+            const rect = noButton.getBoundingClientRect();
+            const padding = 20;
+            const buttonWidth = noButton.offsetWidth;
+            const buttonHeight = noButton.offsetHeight;
+
+            let newX = rect.left;
+            let newY = rect.top;
+
+            if (rect.left + buttonWidth > window.innerWidth - padding) {
+                newX = window.innerWidth - buttonWidth - padding;
+            }
+
+            if (rect.top + buttonHeight > window.innerHeight - padding) {
+                newY = window.innerHeight - buttonHeight - padding;
+            }
+
+            gsap.to(noButton, {
+                duration: 0.3,
+                left: Math.max(newX, padding),
+                top: Math.max(newY, padding),
+                ease: "power1.out"
+            });
+        });
+    </script>
+</body>
+</html>
